@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 22:46:54 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/15 22:39:46 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/25 17:06:56 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/26 01:44:26by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	tmp = str;
 	while (n > 0)
 	{
-		*(char *)tmp++ = (char)c;
+		*(char *)tmp++ = (unsigned char)c;
 		n--;
 	}
 	return (str);

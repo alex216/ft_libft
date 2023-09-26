@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 22:25:18 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/24 19:43:35 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/15 20:59:56 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/26 12:41:03 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	char	*src_tmp;
+	char	*dst_tmp;
 
-	i = 0;
-	while (*(str + i) != '\0')
+	src_tmp = (char *)src;
+	dst_tmp = (char *)dst;
+	if (dst_tmp < src_tmp)
 	{
-		i++;
+		while (n)
+		{
+			*dst_tmp++ = *src_tmp++;
+			n--;
+		}
 	}
-	return (i);
+	else if (dst_tmp > src_tmp)
+	{
+		src_tmp = src_tmp + n - 1;
+		dst_tmp = dst_tmp + n - 1;
+		while (n)
+		{
+			*dst_tmp-- = *src_tmp--;
+			n--;
+		}
+	}
+	return (dst);
 }

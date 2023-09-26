@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 22:25:18 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/24 19:43:35 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/15 17:59:49 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/26 12:34:52 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	void	*tmp;
 
-	i = 0;
-	while (*(str + i) != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	tmp = dst;
+	while (n-- > 0)
+		*(char *)tmp++ = *(char *)src++;
+	return (dst);
 }
