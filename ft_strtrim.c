@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 17:59:49 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/26 13:08:20 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/17 11:26:44 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/17 13:16:02 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	void	*tmp;
+	char	*dst;
+	size_t	i;
+	size_t	start;
+	size_t	end;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	tmp = dst;
-	while (n-- > 0)
-		*(char *)tmp++ = *(char *)src++;
+	i = 0;
+	while (ft_strchr(set, *(s1 + i)))
+		i++;
+	start = i;
+	while (*(s1 + i))
+	{
+		if (!(ft_strchr(set, *(s1 + i))))
+			end = i;
+		i++;
+	}
+	dst = ft_substr(s1, start, end - start + 1);
 	return (dst);
 }

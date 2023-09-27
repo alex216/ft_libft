@@ -1,2 +1,7 @@
 a.out
 .vscode/*
+testmain.c
+.gitignore
+main_additional.c
+main_libft.c
+libft-tester-tokyo/*

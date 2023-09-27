@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 17:59:49 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/26 13:08:20 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/16 23:45:33 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/16 23:51:13 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+static int	is_space(char c)
 {
-	void	*tmp;
+	while (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
+		|| c == ' ')
+		return (1);
+	return (0);
+}
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	tmp = dst;
-	while (n-- > 0)
-		*(char *)tmp++ = *(char *)src++;
-	return (dst);
+int	ft_atoi(const char *str)
+{
+	int	flag;
+	int	n;
+
+	n = 0;
+	flag = 1;
+	while (is_space(*str))
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			flag = -1;
+		str++;
+	}
+	while ('0' <= *str && *str <= '9')
+	{
+		n = n * 10 + (*str - '0');
+		str++;
+	}
+	return (flag * n);
 }
