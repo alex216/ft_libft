@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 22:51:29 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/17 22:53:20 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 21:44:34 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	write(1, "\n", fd);
+	ft_putchar_fd('\n', fd);
 }

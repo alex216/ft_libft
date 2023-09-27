@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 23:45:33 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/27 16:46:44 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 20:24:58 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static int	is_space(char c)
 
 int	ft_atoi(const char *str)
 {
-	int	flag;
-	int	n;
+	int		flag;
+	long	n;
 
 	n = 0;
 	flag = 1;
@@ -37,32 +37,12 @@ int	ft_atoi(const char *str)
 	}
 	while ('0' <= *str && *str <= '9')
 	{
+		if (flag * n > (LONG_MAX - (*str - '0')) / 10)
+			return (-1);
+		if (flag * n < (LONG_MIN + (*str - '0')) / 10)
+			return (0);
 		n = n * 10 + (*str - '0');
 		str++;
 	}
-	return (flag * n);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
-{
-	char	*s1 = "293487";
-	printf("%d\n", atoi(s1));
-	printf("%d\n", ft_atoi(s1));
-	char	*s2 = "2147483648";
-	printf("%d\n", atoi(s2));
-	printf("%d\n", ft_atoi(s2));
-	char	*s3 = "-2147483647";
-	printf("%d\n", atoi(s3));
-	printf("%d\n", ft_atoi(s3));
-
-	char	*s4 = "0";
-	printf("%d\n", atoi(s4));
-	printf("%d\n", ft_atoi(s4));
-
-	char	*s5 = "-0";
-	printf("%d\n", atoi(s5));
-	printf("%d\n", ft_atoi(s5));
+	return ((int)(flag * n));
 }
