@@ -35,19 +35,17 @@ FILES 	   = ft_strlen \
 			 ft_lstnew \
 			 ft_lstadd_front \
 			 ft_lstsize \
-			 ft_lstlast \
+			 ft_lstlast
 
 CFILES	= $(FILES:%=%.c)
-
-OBJS	= $(FILES:%=%.o)
+OBJS = $(FILES:%=%.o)
 
 CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
-
 NAME			= libft.a
 
-all:
+all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				${AR} -r $(NAME) $(OBJS)
