@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 19:55:12 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/14 20:49:10 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 21:57:09 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *src)
 
 	length = ft_strlen(src);
 	dest = (char *)malloc(sizeof(char) * (length + 1));
-	if (!dest)
+	if (dest == NULL)
 		return (NULL);
 	ft_strlcpy(dest, src, length + 1);
 	return (dest);

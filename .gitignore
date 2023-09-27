@@ -5,3 +5,4 @@ testmain.c
 main_additional.c
 main_libft.c
 libft-tester-tokyo/
+libft.a

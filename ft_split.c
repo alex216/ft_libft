@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:41:13 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/17 17:54:48 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 22:12:33 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,30 @@ static size_t	wc(char *hystck, char sep)
 static void	ft_splitexec(char **dst, char const *str, char sep)
 {
 	int			word_len;
+	int			i;
 
-	while (*str)
+	i = 0;
+	while (*str != '\0')
 	{
 		if (*str != sep)
 		{
 			word_len = 0;
-			while (str[word_len] && str[word_len] != sep)
+			while (str[word_len] != '\0' && str[word_len] != sep)
 				word_len++;
-			*dst++ = ft_substr(str, 0, word_len);
+			dst[i] = ft_substr(str, 0, word_len);
+			if (dst[i] == NULL)
+			{
+				while (i >= 0)
+					free(dst[i--]);
+				free(dst);
+			}
+			i++;
 			str = str + word_len;
 		}
 		else
 			str++;
 	}
-	dst = NULL;
+	dst[i] = NULL;
 }
 
 char	**ft_split(char const *str, char sep)

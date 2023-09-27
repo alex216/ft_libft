@@ -31,14 +31,25 @@ FILES 	   = ft_strlen \
 			 ft_putchar_fd \
 			 ft_putstr_fd \
 			 ft_putendl_fd \
-			 ft_putnbr_fd \
-			 ft_lstnew \
-			 ft_lstadd_front \
-			 ft_lstsize \
-			 ft_lstlast
+			 ft_putnbr_fd
 
-CFILES	= $(FILES:%=%.c)
-OBJS = $(FILES:%=%.o)
+B_FILES 	=ft_lstnew \
+			 ft_lstadd_back \
+			 ft_lstadd_front \
+			 ft_lstclear \
+			 ft_lstdelone \
+			 ft_lstiter \
+			 ft_lstlast \
+			 ft_lstmap \
+			 ft_lstnew \
+			 ft_lstsize
+
+CFILES		= $(FILES:%=%.c)
+OBJS 		= $(FILES:%=%.o)
+
+B_CFILES 	= $(B_FILES:%=%.c)
+B_OBJS 		= $(B_FILES:%=%.o)
+
 
 CC				= cc
 RM				= rm -f
@@ -50,8 +61,14 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				${AR} -r $(NAME) $(OBJS)
 
+bonus:			$(OBJS) $(B_OBJS)
+				$(AR) -r $(NAME) $(OBJS) $(B_OBJS)
+
+$(B_OBJS):		$(B_CFLAGS)
+
 clean:
 				$(RM) $(OBJS)
+				$(RM) $(B_OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)

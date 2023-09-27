@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:46:48 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/27 13:10:59 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 22:14:38 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	src_len;
 
 	i = 0;
-
 	src_len = ft_strlen(src);
 	if (size == 0)
 		return (src_len);

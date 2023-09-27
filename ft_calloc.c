@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 23:57:30 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/27 21:20:04 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 22:15:54 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*dst_ptr;
-
 
 	if (size != 0 && count > SIZE_MAX / size)
 		return (NULL);
