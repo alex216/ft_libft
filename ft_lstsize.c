@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:56:24 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/27 21:56:32 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/28 16:23:28 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int	ft_lstsize(t_list *lst)
 {
+	int	i;
+
 	if (lst == NULL)
 		return (0);
-	return ((ft_lstlast(lst) - lst) + 1);
+	i = 1;
+	while (lst->next)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 
-int	main(void)
-{
-
-	ft_lstnew(l)
-
-}
