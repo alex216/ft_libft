@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 22:52:41 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/23 22:53:38 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/27 22:03:20 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/27 22:03:21 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (lst == NULL)
+		return (NULL);
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);

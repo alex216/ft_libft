@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 23:06:26 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/26 23:08:24 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/27 22:02:51 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/27 22:02:55 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	if (lst == NULL || del == NULL)
+		return ;
 	del(lst);
 	free(lst);
 }
-
-// ??

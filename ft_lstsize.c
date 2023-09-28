@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 22:50:38 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/23 23:14:34 by yliu             ###   ########.fr       */
+/*   Created: 2023/09/27 21:56:24 by yliu              #+#    #+#             */
+/*   Updated: 2023/09/27 21:56:32 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	return ((int)(ft_lstlast(lst) - lst));
+	if (lst == NULL)
+		return (0);
+	return ((ft_lstlast(lst) - lst) + 1);
+}
+
+int	main(void)
+{
+
+	ft_lstnew(l)
+
 }

@@ -6,14 +6,16 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 21:30:30 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/23 23:07:54 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/27 19:48:12 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *n)
 {
-	new->next = *lst;
-	lst = &new;
+	if (lst == NULL || n == NULL)
+		return ;
+	n->next = *lst;
+	*lst = n;
 }
