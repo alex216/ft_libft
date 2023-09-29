@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:57:56 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/23 23:15:04 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:18:56 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*tlist_ptr;
+	t_list	*lst_p;
 
-	tlist_ptr = (t_list *)malloc(sizeof(t_list));
-	if (!tlist_ptr)
+	lst_p = malloc(sizeof(t_list));
+	if (lst_p == NULL)
 		return (NULL);
-	tlist_ptr->content = content;
-	tlist_ptr->next = NULL;
-	return (tlist_ptr);
+	lst_p->content = content;
+	lst_p->next = NULL;
+	return (lst_p);
 }

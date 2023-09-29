@@ -6,23 +6,23 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 22:53:53 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/28 16:34:25 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:18:40 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *n)
+void	ft_lstadd_back(t_list **lst_pp, t_list *new_p)
 {
-	t_list	*tlist_ptr;
+	t_list	*last_p;
 
-	if (lst == NULL || n == NULL )
+	if (lst_pp == NULL || new_p == NULL )
 		return ;
-	if (*lst == NULL)
-		*lst = n;
+	if (*lst_pp == NULL)
+		*lst_pp = new_p;
 	else
 	{
-		tlist_ptr = ft_lstlast(*lst);
-		tlist_ptr->next = n;
+		last_p = ft_lstlast(*lst_pp);
+		last_p->next = new_p;
 	}
 }

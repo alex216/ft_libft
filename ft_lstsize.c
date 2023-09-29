@@ -6,23 +6,23 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:56:24 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/29 23:01:41 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:18:57 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst_p)
 {
-	int	i;
+	size_t	i;
 
-	if (lst == NULL)
+	if (lst_p == NULL)
 		return (0);
 	i = 1;
-	while (lst->next)
+	while (lst_p->next)
 	{
-		lst = lst->next;
+		lst_p = lst_p->next;
 		i++;
 	}
-	return (i);
+	return ((int)i);
 }

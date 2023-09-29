@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 20:59:56 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/26 13:08:14 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:19:05 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,15 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	dst_tmp = (char *)dst;
 	if (dst_tmp < src_tmp)
 	{
-		while (n)
-		{
+		while (n--)
 			*dst_tmp++ = *src_tmp++;
-			n--;
-		}
 	}
 	else if (dst_tmp > src_tmp)
 	{
 		src_tmp = src_tmp + n - 1;
 		dst_tmp = dst_tmp + n - 1;
-		while (n)
-		{
+		while (n--)
 			*dst_tmp-- = *src_tmp--;
-			n--;
-		}
 	}
 	return (dst);
 }

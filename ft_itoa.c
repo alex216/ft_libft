@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 18:01:58 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/18 03:18:40 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:18:38 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_itoa(int n)
 
 	len = ft_numlen(n);
 	dest = malloc(sizeof(char) * (len + 1));
-	if (!dest)
+	if (dest == NULL)
 		return (NULL);
 	dest[len] = '\0';
 	if (n == 0)

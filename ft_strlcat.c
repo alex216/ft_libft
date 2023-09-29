@@ -6,14 +6,14 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:47:18 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/28 19:18:18 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:19:27 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // dst == NULL && dstsize == 0
-// this is not written in manual, but this is how original strlcat works.
+// this is not written in manual, but it's how original strlcat works.
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

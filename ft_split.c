@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:41:13 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/27 22:12:33 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:12:15 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ char	**ft_split(char const *str, char sep)
 {
 	char		**dst;
 
-	if (!str)
+	if (str == NULL)
 		return (NULL);
-	dst = malloc(sizeof(char *) * (wc((char *)str, sep)) + 1);
-	if (!dst)
+	dst = malloc(sizeof(char *) * ((wc((char *)str, sep)) + 1));
+	if (dst == NULL)
 		return (NULL);
 	ft_splitexec(dst, str, sep);
 	return (dst);

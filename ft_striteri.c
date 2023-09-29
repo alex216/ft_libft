@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 01:50:21 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/18 05:09:18 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 01:13:43 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
-	if (!s)
+	if (s == NULL || f == NULL)
 		return ;
 	i = 0;
-	while (*(s + i))
+	while (*(s + i) != '\0')
 	{
 		f(i, s + i);
 		i++;
