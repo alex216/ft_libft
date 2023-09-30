@@ -34,15 +34,14 @@ FILES 	   = ft_strlen \
 			 ft_putnbr_fd
 
 B_FILES 	=ft_lstnew \
-			 ft_lstadd_back \
 			 ft_lstadd_front \
-			 ft_lstclear \
-			 ft_lstdelone \
-			 ft_lstiter \
+			 ft_lstsize \
 			 ft_lstlast \
-			 ft_lstmap \
-			 ft_lstnew \
-			 ft_lstsize
+			 ft_lstadd_back \
+			 ft_lstdelone \
+			 ft_lstclear \
+			 ft_lstiter \
+			 ft_lstmap
 
 CFILES		= $(FILES:%=%.c)
 OBJS 		= $(FILES:%=%.o)
@@ -64,7 +63,7 @@ $(NAME):		$(OBJS)
 bonus:			$(OBJS) $(B_OBJS)
 				$(AR) -r $(NAME) $(OBJS) $(B_OBJS)
 
-$(B_OBJS):		$(B_CFLAGS)
+$(B_OBJS):		$(B_CFILES)
 
 clean:
 				$(RM) $(OBJS)

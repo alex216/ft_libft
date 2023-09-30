@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 22:33:27 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:49:26 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 02:41:32 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
-
 	dst = malloc(sizeof(char) * (len + 1));
 	if (dst == NULL)
 		return (NULL);

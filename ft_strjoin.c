@@ -6,12 +6,11 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 10:18:47 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:09:25 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 02:51:24 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

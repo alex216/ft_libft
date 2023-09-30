@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:41:13 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:12:15 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 02:55:11 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	wc(char *hystck, char sep)
 	while (*hystck)
 	{
 		ndl = ft_strchr(hystck, (int)sep);
-		if (!ndl)
+		if (ndl == NULL)
 			return (words + 1);
 		if (ndl != hystck)
 			words++;
