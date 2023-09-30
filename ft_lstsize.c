@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:56:24 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:18:57 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 23:03:23 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ int	ft_lstsize(t_list *lst_p)
 	if (lst_p == NULL)
 		return (0);
 	i = 1;
-	while (lst_p->next)
+	while (lst_p->next != NULL)
 	{
 		lst_p = lst_p->next;
 		i++;
 	}
 	return ((int)i);
 }
+

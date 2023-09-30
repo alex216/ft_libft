@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 23:57:30 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:18:19 by yliu             ###   ########.fr       */
+/*   Updated: 2023/09/30 22:45:08 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(dst_ptr, (size * count));
 	return (dst_ptr);
 }
+
