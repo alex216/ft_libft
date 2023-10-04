@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 18:01:58 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:18:38 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/04 19:41:46 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static size_t	ft_numlen(int n)
 {
-	size_t	len;
+	size_t	str_len;
 
-	len = 1 + (n < 0);
+	str_len = 1 + (n < 0);
 	while (n / 10)
 	{
 		n /= 10;
-		len++;
+		str_len++;
 	}
-	return (len);
+	return (str_len);
 }
 
 char	*ft_itoa(int n)
