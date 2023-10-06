@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 22:15:25 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 02:12:44 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/05 18:59:20 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memset(void *str, int c, size_t n)
 {
 	void	*tmp;
 
+	if (str == NULL)
+		return (NULL);
 	tmp = str;
 	while (n > 0)
 	{
