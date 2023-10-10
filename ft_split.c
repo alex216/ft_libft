@@ -6,23 +6,22 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:41:13 by yliu              #+#    #+#             */
-/*   Updated: 2023/10/10 21:16:40 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/10 21:25:43 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	wc(char *hystck, char sep)
+static size_t	wc(char *str, char sep)
 {
 	size_t		words_count;
 	size_t		i;
 
 	i = 0;
 	words_count = 0;
-	while (hystck[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if ((i == 0 && hystck[0] != sep)
-			|| (hystck[i] == sep && hystck[i - 1] != sep))
+		if ((i == 0 && str[0] != sep) || (str[i] != sep && str[i - 1] == sep))
 			words_count++;
 		i++;
 	}
