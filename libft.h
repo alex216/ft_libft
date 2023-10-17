@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <limits.h>
 
+#define MAX_CHAR 256
+
 typedef struct s_list
 {
 	void			*content;
