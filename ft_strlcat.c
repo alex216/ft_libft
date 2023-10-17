@@ -29,4 +29,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	ft_strlcpy(dst + dst_len, src, dstsize - dst_len);
 	return (src_len + dst_len);
 }
-
