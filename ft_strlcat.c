@@ -21,9 +21,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_len;
 
 	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
 	if (dst == NULL && dstsize == 0)
 		return (src_len);
+	dst_len = ft_strlen(dst);
 	if (dst_len >= dstsize)
 		return (src_len + dstsize);
 	ft_strlcpy(dst + dst_len, src, dstsize - dst_len);
