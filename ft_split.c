@@ -18,7 +18,7 @@ static size_t	wc(char *hystck, char sep)
 	size_t		words;
 
 	words = 0;
-	while (*hystck)
+	while (*hystck != '\0')
 	{
 		ndl = ft_strchr(hystck, (int)sep);
 		if (ndl == NULL)
