@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:26:44 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:09:52 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/17 11:03:34 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (ft_strchr(set, s1[i]) != NULL)
+	while (s1[i] != '\0')
+	{
+		if (ft_strchr(set, s1[i]) == NULL)
+			break ;
 		i++;
+	}
 	start = i;
+	end = i;
 	while (s1[i] != '\0')
 	{
 		if (ft_strchr(set, s1[i]) == NULL)
