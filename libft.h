@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2023/10/11 21:52:43 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/20 15:41:57 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 
-#define MAX_CHAR 256
+# define MAX_CHAR 256
 
 typedef struct s_list
 {
