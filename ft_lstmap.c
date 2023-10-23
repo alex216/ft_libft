@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-// if t_list pointer is in middle of t_list_array,
-// error will occur when read from top of the t_list array,
-// after exec this function.
-
 t_list	*ft_lstmap(t_list *old_p, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head_p;
