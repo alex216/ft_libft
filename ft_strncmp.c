@@ -6,16 +6,11 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 12:38:01 by yliu              #+#    #+#             */
-/*   Updated: 2023/09/30 01:19:36 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/28 15:23:55 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// unsafe when either s1 or s2 is NULL.
-// but this is how original strncmp works.
-// putting i < n ahead inside while condition
-// result in this wired behaviour.
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
