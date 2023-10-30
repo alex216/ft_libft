@@ -12,22 +12,20 @@
 
 #include "libft.h"
 
-static size_t	wc(char *hystck, char sep)
+static size_t	wc(char *str, char sep)
 {
-	char		*ndl;
-	size_t		words;
+	size_t		words_count;
+	size_t		i;
 
-	words = 0;
-	while (*hystck != '\0')
+	i = 0;
+	words_count = 0;
+	while (str[i] != '\0')
 	{
-		ndl = ft_strchr(hystck, (int)sep);
-		if (sep == '\0' || ndl == NULL)
-			return (words + 1);
-		if (ndl != hystck)
-			words++;
-		hystck = ndl + 1;
+		if ((i == 0 && str[0] != sep) || (str[i] != sep && str[i - 1] == sep))
+			words_count++;
+		i++;
 	}
-	return (words);
+	return (words_count);
 }
 
 static int	free_all(char **dst, size_t i)

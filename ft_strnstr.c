@@ -6,21 +6,19 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:40:12 by yliu              #+#    #+#             */
-/*   Updated: 2023/10/02 20:15:05 by yliu             ###   ########.fr       */
+/*   Updated: 2023/10/05 22:22:09 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// when len == 0, return NULL, however,
-// crash when haystack == NULL && len != 0
-// it's how original function works.
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
+	if (haystack == NULL || needle == NULL)
+		return (NULL);
 	if (*needle == '\0')
 		return ((char *)haystack);
 	j = 0;
