@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:47:18 by yliu              #+#    #+#             */
-/*   Updated: 2023/10/05 21:20:35 by yliu             ###   ########.fr       */
+/*   Updated: 2023/11/06 18:54:50 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_len;
 
 	if (dst == NULL && dstsize == 0)
-		return (src_len);
+		return (ft_strlen(src));
 	if (dst == NULL || src == NULL)
         return (0);
 	src_len = ft_strlen(src);
