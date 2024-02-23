@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:44:15 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/24 00:17:07 by yliu             ###   ########.fr       */
+/*   Updated: 2024/02/24 01:31:20 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	output_va(va_list *ap, const char c, struct s_main *t_info, int fd)
 	}
 }
 
-int	ft_printf_fd(int fd, const char *fmt, ...)
+int	ft_dprintf(int fd, const char *fmt, ...)
 {
 	va_list			ap;
 	struct s_main	t_info;
