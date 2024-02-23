@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/24 00:03:14 by yliu             ###   ########.fr        #
+#    Updated: 2024/02/24 01:32:18 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ SRCS			=\
 				 ./src/ft_mem/ft_memset.c \
 				 \
 				 ./src/ft_printf/ft_printf.c \
-				 ./src/ft_printf/ft_printf_fd.c \
+				 ./src/ft_printf/ft_dprintf.c \
 				 ./src/ft_printf/ft_printf_calculate_len_utils.c \
 				 ./src/ft_printf/ft_printf_put_utiles.c \
 				 ./src/ft_printf/ft_printf_utiles.c \
