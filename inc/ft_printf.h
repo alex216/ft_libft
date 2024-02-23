@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:24:54 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/24 00:01:23 by yliu             ###   ########.fr       */
+/*   Updated: 2024/02/24 02:19:13 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ struct		s_main
 };
 
 int			ft_printf(const char *fmt, ...);
-int			ft_printf_fd(int fd, const char *fmt, ...);
+int			ft_dprintf(int fd, const char *fmt, ...);
 
 size_t		ft_strlen(const char *str);
 char		*ft_strchr(const char *s, int c);
