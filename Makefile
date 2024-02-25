@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/25 17:58:21 by yliu             ###   ########.fr        #
+#    Updated: 2024/02/26 07:41:52 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME			= libft.a
 CFLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
-ECHO			= printf
+PRINT			= printf
 
 #directory
 SRCS_DIR		= ./src/
@@ -115,30 +115,32 @@ LINE			=   ───────────────────────
 all:			$(NAME)
 
 $(NAME):		status_check
+
 status_check:
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(WHITE)checking...$(DEF_COLOR)\n"
-				@$(ECHO) "$(GRAY)$(LINE)\r$(DEF_COLOR)"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(WHITE)checking...$(DEF_COLOR)\n"
+				@$(PRINT) "$(GRAY)$(LINE)\r$(DEF_COLOR)"
 				@make -s compile
 
 compile:		$(OBJS)
 				@$(AR) crs $(NAME) $?
-				@$(ECHO) "\r$(GREEN)$(LINE)$(DEF_COLOR)"
-				@$(ECHO) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME)\t\t$(GREEN)compiled ✓$(DEF_COLOR)\n"
+				@$(PRINT) "\r$(GREEN)$(LINE)$(DEF_COLOR)"
+				@$(PRINT) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
+
 $(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
 
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(ECHO) "$(RED)─$(DEF_COLOR)"
+				@$(PRINT) "$(RED)─$(DEF_COLOR)"
 
 #other cmds
 
 clean:
 				@$(RM) $(OBJS_DIR)
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
 re:				fclean
 				@make -s
