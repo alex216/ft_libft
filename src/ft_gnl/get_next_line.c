@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:58:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:38:27 by yliu             ###   ########.fr       */
+/*   Updated: 2024/02/25 17:14:31 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #if BUFFER_SIZE <= 0
 # error "BUFFER_SIZE must be positive"
+#elif BUFFER_SIZE > SIZE_MAX - 1
+# error "BUFFER_SIZE too large"
 #endif
 
 static void	*free_then_put_null(char **pointer)
@@ -74,8 +76,7 @@ char	*get_next_line(int fd)
 	char		*nl_p;
 	char		*rest_str;
 
-	if (fd < 0 || fd > FD_MAX || BUFFER_SIZE < 0 || BUFFER_SIZE > SIZE_T_MAX
-		- 1)
+	if (fd < 0 || fd > FD_MAX)
 		return (NULL);
 	nl_p = gnl_strchr(whole_str[fd], '\n');
 	if (nl_p == NULL)

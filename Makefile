@@ -6,17 +6,15 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/24 01:32:18 by yliu             ###   ########.fr        #
+#    Updated: 2024/02/26 07:41:52 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-SHELL = /bin/zsh
 
 #compiler option and etc
 NAME			= libft.a
 CFLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
-ECHO			= echo -e
+PRINT			= printf
 
 #directory
 SRCS_DIR		= ./src/
@@ -112,40 +110,40 @@ BLUE			=	\033[0;94m
 MAGENTA			=	\033[0;95m
 CYAN			=	\033[0;96m
 WHITE			=	\033[0;97m
-LINE			=   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+LINE			=   ────────────────────────────────────────────────────────
 
 all:			$(NAME)
 
 $(NAME):		status_check
 
 status_check:
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(WHITE)checking...$(DEF_COLOR)"
-				@$(ECHO) -n "\e$(GRAY)$(LINE)\r$(DEF_COLOR)"
-				@make compile
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(WHITE)checking...$(DEF_COLOR)\n"
+				@$(PRINT) "$(GRAY)$(LINE)\r$(DEF_COLOR)"
+				@make -s compile
 
 compile:		$(OBJS)
 				@$(AR) crs $(NAME) $?
-				@$(ECHO) -n "\r\e$(GREEN)$(LINE)$(DEF_COLOR)"
-				@$(ECHO) "$(GREEN) \u2023 100% $(DEF_COLOR)"
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)compiled \u2714$(DEF_COLOR)"
+				@$(PRINT) "\r$(GREEN)$(LINE)$(DEF_COLOR)"
+				@$(PRINT) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
 
 $(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
 
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(ECHO) -n "$(RED)\u2500$(DEF_COLOR)"
+				@$(PRINT) "$(RED)─$(DEF_COLOR)"
 
 #other cmds
 
 clean:
 				@$(RM) $(OBJS_DIR)
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted \u2714$(DEF_COLOR)"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)deleted \u2714$(DEF_COLOR)"
+				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
 re:				fclean
-				@make
+				@make -s
 
 norm:
 				@norminette $(SRCS) $(HEADERS); norminette -v
