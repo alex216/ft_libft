@@ -6,12 +6,16 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/25 16:34:49 by yliu             ###   ########.fr        #
+#    Updated: 2024/02/25 17:44:18 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ifneq ($(shell which zsh),)
 	SHELL = /bin/zsh
+endif
+
+ifeq ($(shell echo "test ✔"),test ✔)
+	UNICODE_SUPPORTED := 1
 endif
 
 #compiler option and etc
@@ -119,6 +123,11 @@ LINE			=   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2
 all:			$(NAME)
 
 $(NAME):		status_check
+ifeq ($(UNICODE_SUPPORTED),1)
+	@echo "Unicode ✔ is supported!"
+else
+	@echo "Unicode ❌ is not supported!"
+endif
 
 status_check:
 				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(WHITE)checking...$(DEF_COLOR)"
