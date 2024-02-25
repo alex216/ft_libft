@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:14:14 by yliu              #+#    #+#             */
-/*   Updated: 2024/01/11 12:01:27 by yliu             ###   ########.fr       */
+/*   Updated: 2024/02/25 17:26:39 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ void	pf_calculate_long_len(long long ll, char c, struct s_main *t_info)
 void	pf_calculate_ull_len(unsigned long long ull, int base,
 		struct s_main *t_info)
 {
-	if (ull < 0)
-	{
-		ull = -ull;
-		t_info->prt_len++;
-	}
 	if (ull / base)
 		pf_calculate_ull_len(ull / base, base, t_info);
 	t_info->prt_len++;

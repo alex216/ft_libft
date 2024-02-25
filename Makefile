@@ -6,11 +6,13 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/24 01:32:18 by yliu             ###   ########.fr        #
+#    Updated: 2024/02/25 16:34:49 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SHELL = /bin/zsh
+ifneq ($(shell which zsh),)
+	SHELL = /bin/zsh
+endif
 
 #compiler option and etc
 NAME			= libft.a

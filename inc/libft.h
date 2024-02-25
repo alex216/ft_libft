@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:36:17 by yliu             ###   ########.fr       */
+/*   Updated: 2024/02/25 17:24:29 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdbool.h>
 # include <stddef.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 
