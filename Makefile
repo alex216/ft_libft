@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/25 17:44:18 by yliu             ###   ########.fr        #
+#    Updated: 2024/02/25 17:58:21 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,7 +118,7 @@ BLUE			=	\033[0;94m
 MAGENTA			=	\033[0;95m
 CYAN			=	\033[0;96m
 WHITE			=	\033[0;97m
-LINE			=   \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+LINE			=   ────────────────────────────────────────────────────────
 
 all:			$(NAME)
 
@@ -137,23 +137,23 @@ status_check:
 compile:		$(OBJS)
 				@$(AR) crs $(NAME) $?
 				@$(ECHO) -n "\r\e$(GREEN)$(LINE)$(DEF_COLOR)"
-				@$(ECHO) "$(GREEN) \u2023 100% $(DEF_COLOR)"
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)compiled \u2714$(DEF_COLOR)"
+				@$(ECHO) "$(GREEN) ‣ 100% $(DEF_COLOR)"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)compiled ✓$(DEF_COLOR)"
 
 $(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
 
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(ECHO) -n "$(RED)\u2500$(DEF_COLOR)"
+				@$(ECHO) -n "$(RED)─$(DEF_COLOR)"
 
 #other cmds
 
 clean:
 				@$(RM) $(OBJS_DIR)
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted \u2714$(DEF_COLOR)"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)deleted \u2714$(DEF_COLOR)"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tlibft.a \t$(GREEN)deleted ✓$(DEF_COLOR)"
 
 re:				fclean
 				@make
