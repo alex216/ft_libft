@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_fd.c                                     :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:44:15 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/24 01:31:20 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/04 21:30:11 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ static void	pf_process_int(char c, va_list *ap, struct s_main *t_info, int fd)
 	}
 }
 
-static void	pf_process_unsigned_int(char c, va_list *ap, struct s_main *t_info, int fd)
+static void	pf_process_unsigned_int(char c, va_list *ap, struct s_main *t_info
+									, int fd)
 {
 	unsigned int	un;
 
