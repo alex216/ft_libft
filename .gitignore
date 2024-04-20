@@ -58,3 +58,6 @@ dkms.conf
 # End of https://www.toptal.com/developers/gitignore/api/c
 a.out*
 .vscode*
+test/unit/gtest/*
+tags
+compile_flags.txt
