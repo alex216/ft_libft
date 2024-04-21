@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:31:52 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/21 15:30:16 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:28:02 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 
 static void	_print_ascending_direction(const t_lst *lst_p,
-	void *(*return_printable)(const t_lst *))
+	char *(*return_printable)(const t_lst *))
 {
 	while (!lst_p->is_sentinel)
 	{
@@ -25,7 +25,7 @@ static void	_print_ascending_direction(const t_lst *lst_p,
 }
 
 void	ft_dl_pf_lst(const t_lst *lst_p,
-	void *(*return_printable)(const t_lst *))
+	char *(*return_printable)(const t_lst *))
 {
 	if (!lst_p || !(*return_printable))
 	{
