@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dl_lst_create_ope.c                             :+:      :+:    :+:   */
+/*   ft_dl_lstcreate_ope.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:04:09 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/13 18:31:41 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 15:26:07 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	ft_dl_lstadd_sentinel_to_node(t_lst *lst_pp)
+static t_lst	*_ft_dl_lstcreate_a_node(t_record *record_p, size_t is_sentinel)
+{
+	t_lst	*lst_p;
+
+	lst_p = ft_calloc(1, sizeof(t_lst));
+	if (!lst_p)
+		return (NULL);
+	lst_p->payload_p = record_p;
+	lst_p->is_sentinel = is_sentinel;
+	lst_p->next_p = NULL;
+	lst_p->prev_p = NULL;
+	return (lst_p);
+}
+
+static bool	_ft_dl_lstadd_sentinel_to_node(t_lst *lst_pp)
 {
 	t_lst	*sentinel_p;
 
-	sentinel_p = ft_dl_lstcreate_a_node(NULL, true);
+	sentinel_p = _ft_dl_lstcreate_a_node(NULL, true);
 	if (!sentinel_p)
 		return (false);
 	lst_pp->next_p = sentinel_p;
@@ -34,7 +48,7 @@ bool	ft_dl_lstadd_back_with_lst(t_lst **lst_pp, t_lst *new_p)
 		return (false);
 	if (!*lst_pp)
 	{
-		if (!ft_dl_lstadd_sentinel_to_node(new_p))
+		if (!_ft_dl_lstadd_sentinel_to_node(new_p))
 			return (false);
 		*lst_pp = new_p;
 	}
@@ -56,7 +70,7 @@ bool	ft_dl_lstadd_front_with_lst(t_lst **lst_pp, t_lst *new_p)
 		return (false);
 	if (!*lst_pp)
 	{
-		if (!ft_dl_lstadd_sentinel_to_node(new_p))
+		if (!_ft_dl_lstadd_sentinel_to_node(new_p))
 			return (false);
 		*lst_pp = new_p;
 	}
@@ -71,56 +85,3 @@ bool	ft_dl_lstadd_front_with_lst(t_lst **lst_pp, t_lst *new_p)
 	}
 	return (true);
 }
-
-bool	ft_dl_lstappend(t_lst **lst_pp, t_record *record_p)
-{
-	t_lst	*lst_p;
-
-	if (!record_p || !lst_pp)
-		return (false);
-	lst_p = ft_dl_lstcreate_a_node(record_p, false);
-	if (!lst_p)
-		return (false);
-	if (!*lst_pp)
-	{
-		if (!ft_dl_lstadd_sentinel_to_node(lst_p))
-			return (false);
-		*lst_pp = lst_p;
-	}
-	else
-	{
-		if (!ft_dl_lstadd_back_with_lst(lst_pp, lst_p))
-			return (false);
-	}
-	return (true);
-}
-
-// exit becase ans_pp is created inside this func.
-// t_lst	*ft_dl_lstdup(t_lst **src_pp)
-// {
-// 	t_lst	*iter_p;
-// 	t_lst	*des_p;
-// 	t_lst	*iter_cpy_p;
-// 	t_record	*record_p;
-//
-// 	des_p = NULL;
-// 	if (!src_pp)
-// 		return (NULL);
-// 	if (!*src_pp)
-// 		return (NULL);
-// 	iter_p = *src_pp;
-// 	while (!iter_p->is_sentinel)
-// 	{
-// 		record_p = create_record(iter_p->payload_p->char_content);
-// 		if (!record_p)
-// 			exit(EXIT_FAILURE);
-// 		// record_p->index = get_index_of(iter_p);
-// 		iter_cpy_p = ft_dl_lstcreate_a_node(record_p, false);
-// 		if (!iter_cpy_p)
-// 			exit (EXIT_FAILURE);
-// 		if (!ft_dl_lstadd_back_with_lst(&des_p, iter_cpy_p))
-// 			exit(EXIT_FAILURE);
-// 		iter_p = iter_p->next_p;
-// 	}
-// 	return (des_p);
-// }

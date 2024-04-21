@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/02/26 07:41:52 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/21 13:38:13 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME			= libft.a
 CFLAGS			= -Wall -Wextra -Werror
 RM				= rm -rf
-PRINT			= printf
+ECHO			= printf
 
 #directory
 SRCS_DIR		= ./src/
@@ -27,7 +27,6 @@ INCLUDE			= ./inc/
 SRCS			=\
 				 ./src/ft_dl_lst/ft_dl_lstcreate_ope.c \
 				 ./src/ft_dl_lst/ft_dl_lstclear.c \
-				 ./src/ft_dl_lst/ft_dl_lstcreate_a_node.c \
 				 ./src/ft_dl_lst/ft_dl_lstdelone.c \
 				 ./src/ft_dl_lst/ft_dl_lstlast.c \
 				 ./src/ft_dl_lst/ft_dl_lstsize.c \
@@ -117,30 +116,30 @@ all:			$(NAME)
 $(NAME):		status_check
 
 status_check:
-				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(WHITE)checking...$(DEF_COLOR)\n"
-				@$(PRINT) "$(GRAY)$(LINE)\r$(DEF_COLOR)"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(WHITE)checking...$(DEF_COLOR)\n"
+				@$(ECHO) "\e$(GRAY)$(LINE)\r$(DEF_COLOR)"
 				@make -s compile
 
 compile:		$(OBJS)
 				@$(AR) crs $(NAME) $?
-				@$(PRINT) "\r$(GREEN)$(LINE)$(DEF_COLOR)"
-				@$(PRINT) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
-				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
+				@$(ECHO) "\r\e$(GREEN)$(LINE)$(DEF_COLOR)"
+				@$(ECHO) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
 
 $(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
 
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(PRINT) "$(RED)─$(DEF_COLOR)"
+				@$(ECHO) "$(RED)─$(DEF_COLOR)"
 
 #other cmds
 
 clean:
 				@$(RM) $(OBJS_DIR)
-				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@$(PRINT) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
+				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
 re:				fclean
 				@make -s
@@ -155,3 +154,5 @@ debug:			$(CFLAGS) += -g -fsanitize=address -fsanitize=leaks\
 				fsanitize=integer
 
 .PHONY:			all clean fclean re bonus norm format_norm debug
+
+include Makefile_tester.mk
