@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 10:53:08 by yliu              #+#    #+#              #
-#    Updated: 2024/04/21 18:53:05 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/21 18:56:51 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # test
@@ -56,7 +56,7 @@ test_step_1:$(TEST_OBJS)
 			@$(ECHO)  "\r\e$(GREEN)$(LINE1)$(DEF_COLOR)"
 			@$(ECHO) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
 			@$(ECHO) "$(DEF_COLOR)$(BLUE)[$(TEST_NAME)]\ttest files \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
-			$(CXX) -L . -lpthread $(TEST_OBJS) $(GTEST_OBJS) -lft -o $(TEST_NAME)
+			$(CXX) -lpthread $(TEST_OBJS) $(GTEST_OBJS) -L . -lft -o $(TEST_NAME)
 			@./$(TEST_NAME)
 			@$(RM) $(TEST_NAME)
 
