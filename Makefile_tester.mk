@@ -6,11 +6,14 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 10:53:08 by yliu              #+#    #+#              #
-#    Updated: 2024/04/20 16:03:00 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/21 19:19:49 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # test
 TEST_NAME		:= tester
+LIB_LOCATION	:= .
+LIB_NAME		:= ft
+
 CXXFLAGS		:= -std=c++17 $(WARNING) -DGTEST=1
 
 # gtest option
@@ -46,7 +49,7 @@ LINE1			:= ━
 test:		test_step_0
 
 .PHONY:		test_step_0
-test_step_0:$(GTEST_OBJS)
+test_step_0:$(GTEST_OBJS) $(NAME)
 			@$(ECHO) "$(DEF_COLOR)$(BLUE)[$(TEST_NAME)]\ttest files \t$(WHITE)checking...$(DEF_COLOR)\n"
 			@$(ECHO)  "\e$(GRAY)$(LINE1)\r$(DEF_COLOR)"
 			@make -s test_step_1
@@ -56,7 +59,7 @@ test_step_1:$(TEST_OBJS)
 			@$(ECHO)  "\r\e$(GREEN)$(LINE1)$(DEF_COLOR)"
 			@$(ECHO) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
 			@$(ECHO) "$(DEF_COLOR)$(BLUE)[$(TEST_NAME)]\ttest files \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
-			$(CXX) -L . -lft -lpthread $(TEST_OBJS) $(GTEST_OBJS) -o $(TEST_NAME)
+			$(CXX) -L $(LIB_LOCATION) -l$(LIB_NAME) -lpthread $(TEST_OBJS) $(GTEST_OBJS) -o $(TEST_NAME)
 			@./$(TEST_NAME)
 			@$(RM) $(TEST_NAME)
 

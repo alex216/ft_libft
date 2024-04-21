@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 19:55:12 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:37:29 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:41:10 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strdup(const char *src)
 		return (NULL);
 	length = ft_strlen(src);
 	dst = ft_xcalloc(sizeof(char) * (length + 1));
-	if (dst == NULL)
-		return (NULL);
 	ft_strlcpy(dst, src, length + 1);
 	return (dst);
 }

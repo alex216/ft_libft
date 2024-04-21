@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/21 15:28:34 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:28:14 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ t_lst					*ft_dl_lstlast(const t_lst *lst);
 void					ft_dl_lstdelone(t_lst *lst, void (*del)(void *));
 void					ft_dl_lstclear(t_lst **lst_pp, void (*del)(void *));
 void					ft_dl_pf_lst(const t_lst *lst_p,
-							void *(*return_printable)(const t_lst *));
+							char *(*return_printable)(const t_lst *));
 
 // replace mallloc
 void					*ft_xcalloc(size_t sizet);
