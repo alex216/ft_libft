@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:58:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/25 17:14:31 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:43:31 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static size_t	get_whole_str_from_read(int fd, char **whole_str)
 	ssize_t	bytes_read;
 
 	buf = ft_xcalloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (buf == NULL)
-		return (free_then_put_null(whole_str), EXIT_FAILURE);
 	while (1)
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);

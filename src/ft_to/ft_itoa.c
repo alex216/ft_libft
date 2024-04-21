@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 18:01:58 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:36:02 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:36:31 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ char	*ft_itoa(int n)
 
 	len = ft_numlen(n);
 	dest = ft_xcalloc(sizeof(char) * (len + 1));
-	if (dest == NULL)
-		return (NULL);
 	dest[len] = '\0';
 	if (n == 0)
 		dest[0] = '0';

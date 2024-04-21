@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:04:09 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/21 15:26:07 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:46:39 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ static t_lst	*_ft_dl_lstcreate_a_node(t_record *record_p, size_t is_sentinel)
 {
 	t_lst	*lst_p;
 
-	lst_p = ft_calloc(1, sizeof(t_lst));
-	if (!lst_p)
-		return (NULL);
+	lst_p = ft_xcalloc(sizeof(t_lst));
 	lst_p->payload_p = record_p;
 	lst_p->is_sentinel = is_sentinel;
 	lst_p->next_p = NULL;

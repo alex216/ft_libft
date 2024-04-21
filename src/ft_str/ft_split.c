@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:41:13 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:37:23 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:40:03 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ static size_t	wc(char *str, char sep)
 	return (words_count);
 }
 
-static int	free_all(char **dst, size_t i)
-{
-	while (i > 0)
-		free(dst[--i]);
-	free(dst);
-	return (false);
-}
-
 static int	ft_splitexec(char **dst, char const *str, char sep)
 {
 	size_t	word_len;
@@ -50,8 +42,6 @@ static int	ft_splitexec(char **dst, char const *str, char sep)
 			while (str[word_len] != '\0' && str[word_len] != sep)
 				word_len++;
 			dst[i] = ft_substr(str, 0, word_len);
-			if (dst[i] == NULL)
-				return (free_all(dst, i));
 			i++;
 			str = str + word_len;
 		}
@@ -69,9 +59,6 @@ char	**ft_split(char const *str, char sep)
 	if (str == NULL)
 		return (NULL);
 	dst = ft_xcalloc(sizeof(char *) * ((wc((char *)str, sep)) + 1));
-	if (dst == NULL)
-		return (NULL);
-	if (ft_splitexec(dst, str, sep))
-		return (NULL);
+	ft_splitexec(dst, str, sep);
 	return (dst);
 }

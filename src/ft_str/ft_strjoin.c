@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 10:18:47 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:37:31 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:36:49 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	dst = ft_xcalloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (dst == NULL)
-		return (NULL);
 	ft_strlcpy(dst, s1, s1_len + 1);
 	ft_strlcpy(dst + s1_len, s2, s2_len + 1);
 	return (dst);

@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 00:07:26 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:38:45 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 18:42:09 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ char	*gnl_strndup(const char *src, size_t n)
 	if (src == NULL)
 		return (NULL);
 	dst = ft_xcalloc(sizeof(char) * (n + 1));
-	if (dst == NULL)
-		return (NULL);
 	gnl_strlcpy(dst, src, n + 1);
 	return (dst);
 }
@@ -97,11 +95,6 @@ char	*gnl_join_then_free(char **s1, char const *s2)
 	if (s2 == NULL)
 		return (*s1);
 	dst = ft_xcalloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (dst == NULL)
-	{
-		free(*s1);
-		return (NULL);
-	}
 	gnl_strlcpy(dst, *s1, s1_len + 1);
 	gnl_strlcpy(dst + s1_len, s2, s2_len + 1);
 	free(*s1);
