@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:40:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/01/22 16:17:36 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 15:30:01 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,3 @@ void	ft_dl_lstclear(t_lst **lst_pp, void (*del)(void *))
 	ft_dl_lstdelone(iter_p, del);
 	*lst_pp = NULL;
 }
-
-// //////////////////////////////////////////
-// static void	*del(void *tmp)
-// {
-// 	free(tmp);
-// 	return (NULL);
-// }
-//
-// int	main(void)
-// {
-// 	t_lst	*origin_p;
-// 	t_lst	*tmp_p;
-// 	t_lst	*tmp1_p;
-//
-// 	origin_p = ft_dl_lstnew(42);
-// 	tmp_p = ft_dl_lstcreate(2, false);
-// 	tmp1_p = ft_dl_lstcreate(4, false);
-// 	ft_dl_pf_lst(origin_p);
-// 	ft_dl_lstadd_front(&origin_p, tmp_p);
-// 	ft_dl_pf_lst(origin_p);
-// 	ft_dl_lstadd_front(&origin_p, tmp1_p);
-// 	ft_dl_pf_lst(origin_p);
-//
-// 	ft_dl_lstclear(&origin_p, (void *)del);
-//
-// 	return (0);
-// }
