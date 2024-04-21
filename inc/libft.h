@@ -124,14 +124,7 @@ void					ft_dl_lstclear(t_lst **lst_pp, void (*del)(void *));
 void					ft_dl_pf_lst(const t_lst *lst_p,
 							void *(*return_printable)(const t_lst *));
 
-// helper func
-t_lst					*ft_dl_lstcreate_a_node(t_record *record_p,
-							size_t is_sentinel);
-
 // replace mallloc
 void					*ft_xcalloc(size_t sizet);
 
-// void				ft_dl_lstiter(t_dl_lst *tlist_ptr, void (*f)(void *));
-// t_dl_lst				*ft_dl_lstmap(t_dl_lst *lst_ptr, void *(*f)(void *),
-// 						void (*del)(void *));
 #endif

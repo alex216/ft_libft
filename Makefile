@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/18 16:54:35 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/21 13:38:13 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ INCLUDE			= ./inc/
 SRCS			=\
 				 ./src/ft_dl_lst/ft_dl_lstcreate_ope.c \
 				 ./src/ft_dl_lst/ft_dl_lstclear.c \
-				 ./src/ft_dl_lst/ft_dl_lstcreate_a_node.c \
 				 ./src/ft_dl_lst/ft_dl_lstdelone.c \
 				 ./src/ft_dl_lst/ft_dl_lstlast.c \
 				 ./src/ft_dl_lst/ft_dl_lstsize.c \
