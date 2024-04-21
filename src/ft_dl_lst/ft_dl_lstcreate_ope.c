@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dl_lst_create_ope.c                             :+:      :+:    :+:   */
+/*   ft_dl_lstcreate_ope.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:04:09 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/13 18:31:41 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/21 13:37:14 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	ft_dl_lstadd_sentinel_to_node(t_lst *lst_pp)
+static t_lst	*_ft_dl_lstcreate_a_node(t_record *record_p, size_t is_sentinel)
+{
+	t_lst	*lst_p;
+
+	lst_p = ft_calloc(1, sizeof(t_lst));
+	if (!lst_p)
+		return (NULL);
+	lst_p->payload_p = record_p;
+	lst_p->is_sentinel = is_sentinel;
+	lst_p->next_p = NULL;
+	lst_p->prev_p = NULL;
+	return (lst_p);
+}
+
+static bool	_ft_dl_lstadd_sentinel_to_node(t_lst *lst_pp)
 {
 	t_lst	*sentinel_p;
 
-	sentinel_p = ft_dl_lstcreate_a_node(NULL, true);
+	sentinel_p = _ft_dl_lstcreate_a_node(NULL, true);
 	if (!sentinel_p)
 		return (false);
 	lst_pp->next_p = sentinel_p;
@@ -34,7 +48,7 @@ bool	ft_dl_lstadd_back_with_lst(t_lst **lst_pp, t_lst *new_p)
 		return (false);
 	if (!*lst_pp)
 	{
-		if (!ft_dl_lstadd_sentinel_to_node(new_p))
+		if (!_ft_dl_lstadd_sentinel_to_node(new_p))
 			return (false);
 		*lst_pp = new_p;
 	}
@@ -56,7 +70,7 @@ bool	ft_dl_lstadd_front_with_lst(t_lst **lst_pp, t_lst *new_p)
 		return (false);
 	if (!*lst_pp)
 	{
-		if (!ft_dl_lstadd_sentinel_to_node(new_p))
+		if (!_ft_dl_lstadd_sentinel_to_node(new_p))
 			return (false);
 		*lst_pp = new_p;
 	}
@@ -68,29 +82,6 @@ bool	ft_dl_lstadd_front_with_lst(t_lst **lst_pp, t_lst *new_p)
 		(*lst_pp)->prev_p->next_p = new_p;
 		(*lst_pp)->prev_p = new_p;
 		*lst_pp = new_p;
-	}
-	return (true);
-}
-
-bool	ft_dl_lstappend(t_lst **lst_pp, t_record *record_p)
-{
-	t_lst	*lst_p;
-
-	if (!record_p || !lst_pp)
-		return (false);
-	lst_p = ft_dl_lstcreate_a_node(record_p, false);
-	if (!lst_p)
-		return (false);
-	if (!*lst_pp)
-	{
-		if (!ft_dl_lstadd_sentinel_to_node(lst_p))
-			return (false);
-		*lst_pp = lst_p;
-	}
-	else
-	{
-		if (!ft_dl_lstadd_back_with_lst(lst_pp, lst_p))
-			return (false);
 	}
 	return (true);
 }
