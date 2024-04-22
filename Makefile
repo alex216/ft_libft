@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/21 13:38:13 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/22 16:24:21 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,13 @@ SRCS			=\
 				 ./src/ft_is/ft_isascii.c \
 				 ./src/ft_is/ft_isdigit.c \
 				 ./src/ft_is/ft_isprint.c \
+				 \
+				 ./src/ft_is2/ft_isblank.c \
+				 ./src/ft_is2/ft_isquote.c \
+				 ./src/ft_is2/ft_iswildcard.c \
+				 ./src/ft_is2/ft_isreserved_word.c \
+				 ./src/ft_is2/ft_ismetacharacter.c \
+				 ./src/ft_is2/ft_isspecial_char.c \
 				 \
 				 ./src/ft_lst/ft_lstadd_back.c \
 				 ./src/ft_lst/ft_lstadd_front.c \
@@ -109,7 +116,9 @@ BLUE			=	\033[0;94m
 MAGENTA			=	\033[0;95m
 CYAN			=	\033[0;96m
 WHITE			=	\033[0;97m
-LINE			=   ────────────────────────────────────────────────────────
+-				=	━
+FILE_NUM		= $(words $(SRCS))
+LINE			= $(shell yes $- | head -n $(FILE_NUM) | tr -d '\n'; echo)
 
 all:			$(NAME)
 
@@ -129,7 +138,7 @@ compile:		$(OBJS)
 $(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
 
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(ECHO) "$(RED)─$(DEF_COLOR)"
+				@$(ECHO) "$(RED)$-$(DEF_COLOR)"
 
 #other cmds
 

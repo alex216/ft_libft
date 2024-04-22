@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/21 18:28:14 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/22 15:42:23 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,16 @@ void					ft_lstclear(t_list **lst_ptr, void (*del)(void *));
 void					ft_lstiter(t_list *tlist_ptr, void (*f)(void *));
 t_list					*ft_lstmap(t_list *lst_ptr, void *(*f)(void *),
 							void (*del)(void *));
+
+//////////////////////////////////////////
+// updated libft
+
+bool					ft_isblank(char c);
+bool					ft_isquote(char c);
+bool					ft_iswildcard(char c);
+bool					ft_isreserved_word(char c);
+bool					ft_ismetacharacter(char c);
+bool					ft_isspecial_char(char c);
 
 // updated doubly_linked_list after libft
 // defining the generalized structure of doubly linked list,
