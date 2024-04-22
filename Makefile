@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/21 13:38:13 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/22 16:24:21 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,13 @@ SRCS			=\
 				 ./src/ft_is/ft_isascii.c \
 				 ./src/ft_is/ft_isdigit.c \
 				 ./src/ft_is/ft_isprint.c \
+				 \
+				 ./src/ft_is2/ft_isblank.c \
+				 ./src/ft_is2/ft_isquote.c \
+				 ./src/ft_is2/ft_iswildcard.c \
+				 ./src/ft_is2/ft_isreserved_word.c \
+				 ./src/ft_is2/ft_ismetacharacter.c \
+				 ./src/ft_is2/ft_isspecial_char.c \
 				 \
 				 ./src/ft_lst/ft_lstadd_back.c \
 				 ./src/ft_lst/ft_lstadd_front.c \
