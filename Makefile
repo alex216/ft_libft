@@ -116,7 +116,9 @@ BLUE			=	\033[0;94m
 MAGENTA			=	\033[0;95m
 CYAN			=	\033[0;96m
 WHITE			=	\033[0;97m
-LINE			=   ────────────────────────────────────────────────────────
+-				=	━
+FILE_NUM		= $(words $(SRCS))
+LINE			= $(shell yes $- | head -n $(FILE_NUM) | tr -d '\n'; echo)
 
 all:			$(NAME)
 
@@ -136,7 +138,7 @@ compile:		$(OBJS)
 $(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
 
 				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(ECHO) "$(RED)─$(DEF_COLOR)"
+				@$(ECHO) "$(RED)$-$(DEF_COLOR)"
 
 #other cmds
 
