@@ -7,11 +7,11 @@ extern "C"
 #include "get_next_line.h"
 }
 
-TEST(ft_min, two_arg)
+TEST(ft_min, check_min)
 {
 	int	ans2 = ft_min(2, 42, 43);
 	EXPECT_EQ(ans2, 42);
 
-	// char	*ans3 = ft_strjooin(3, "hello", " world", "!");
-	// EXPECT_STREQ(ans3, "hello world!");
+	int	ans3 = ft_min(3, 24, 42, 43);
+	EXPECT_EQ(ans3, 24);
 }

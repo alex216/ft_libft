@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 10:53:08 by yliu              #+#    #+#              #
-#    Updated: 2024/04/22 17:41:26 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/22 17:44:08 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # test
@@ -38,8 +38,6 @@ GTEST_SRCS		:=	$(GTEST_SRCS_DIR)/gtest_main.cc \
 TEST_SRCS		:=	$(TEST_SRCS_DIR)/double_linked_list.cpp \
 					$(TEST_SRCS_DIR)/ft_str2.cpp \
 					$(TEST_SRCS_DIR)/ft_math.cpp
-
-
 
 # obj files
 TEST_OBJS		:= $(subst $(TEST_SRCS_DIR), $(TEST_OBJS_DIR), $(TEST_SRCS:.cpp=.o))
