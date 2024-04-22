@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/22 18:27:26 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/22 19:46:54 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,8 @@ SRCS			=\
 				 ./src/ft_str2/ft_strjooin.c \
 				 \
 				 ./src/ft_math/ft_min.c \
+				 \
+				 ./src/ft_utils/ft_free_list.c \
 				 \
 
 OBJS			= $(subst $(SRCS_DIR), $(OBJS_DIR), $(SRCS:.c=.o))
