@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/22 17:42:33 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/22 18:27:26 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,17 +111,17 @@ HEADERS			=	./inc/ft_printf.h \
 MAKE_OBJDIR		= $(shell mkdir -p $(subst $(SRCS_DIR), $(OBJS_DIR), $(dir $(SRCS))))
 
 #color and line
-DEF_COLOR		=	\033[0;39m
-ORANGE			=	\033[0;33m
-GRAY			=	\033[0;90m
-RED				=	\033[0;91m
-GREEN			=	\033[1;92m
-YELLOW			=	\033[1;93m
-BLUE			=	\033[0;94m
-MAGENTA			=	\033[0;95m
-CYAN			=	\033[0;96m
-WHITE			=	\033[0;97m
--				=	━
+DEF_COLOR		:=	\033[0;39m
+ORANGE			:=	\033[0;33m
+GRAY			:=	\033[0;90m
+RED				:=	\033[0;91m
+GREEN			:=	\033[1;92m
+YELLOW			:=	\033[1;93m
+BLUE			:=	\033[0;94m
+MAGENTA			:=	\033[0;95m
+CYAN			:=	\033[0;96m
+WHITE			:=	\033[0;97m
+-				:=	━
 FILE_NUM		= $(words $(SRCS))
 LINE			= $(shell yes $- | head -n $(FILE_NUM) | tr -d '\n'; echo)
 

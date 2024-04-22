@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 10:53:08 by yliu              #+#    #+#              #
-#    Updated: 2024/04/22 17:44:08 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/22 18:27:16 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # test
@@ -44,7 +44,9 @@ TEST_OBJS		:= $(subst $(TEST_SRCS_DIR), $(TEST_OBJS_DIR), $(TEST_SRCS:.cpp=.o))
 GTEST_OBJS		:= $(subst $(GTEST_SRCS_DIR), $(TEST_OBJS_DIR), $(GTEST_SRCS:.cc=.o))
 OBJ_FILTER_MAIN	:= $(filter-out $(OBJS_DIR)/main.o, $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS)))
 
-LINE1			:= ━
+-				:= ━
+FILE_NUM1		= $(words $(TEST_SRCS))
+LINE1			= $(shell yes $- | head -n $(FILE_NUM1) | tr -d '\n'; echo)
 
 ##########################################
 .PHONY:		test
