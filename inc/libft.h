@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/22 17:04:35 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/22 17:41:54 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,9 @@ bool					ft_isspecial_char(char c);
 
 // str2-group
 char	*ft_strjooin(int argc, const char *a, const char *b, ...);
+
+// math-group
+int	ft_min(int argc, int a, int b, ...);
 
 // updated doubly_linked_list after libft
 // defining the generalized structure of doubly linked list,

@@ -7,7 +7,7 @@ extern "C"
 #include "get_next_line.h"
 }
 
-TEST(ft_strjooin, two_arg)
+TEST(ft_strjooin, checking_2_or_3_arg)
 {
 	char	*ans2 = ft_strjooin(2, "hello", " world!");
 	EXPECT_STREQ(ans2, "hello world!");
