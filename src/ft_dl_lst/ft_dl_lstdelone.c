@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:26:37 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 10:35:36 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 12:29:10 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_dl_lstdelone(t_lst *lst_p, void (*del)(void *))
 		free(lst_p);
 		return ;
 	}
+	ft_dl_lstlast(lst_p)->next_p->is_sentinel--;
 	lst_p->prev_p->next_p = lst_p->next_p;
 	lst_p->next_p->prev_p = lst_p->prev_p;
 	del(lst_p);
