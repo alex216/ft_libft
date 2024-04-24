@@ -6,12 +6,12 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:31:52 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 07:12:24 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 16:35:27 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "dlist.h"
 #include "ft_printf.h"
-#include "libft.h"
 
 static void	_print_ascending_direction(const t_lst *lst_p,
 	char *(*return_printable)(const t_lst *))

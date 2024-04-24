@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dl_lstclear.c                                   :+:      :+:    :+:   */
+/*   ft_xcalloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 15:40:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 16:19:17 by yliu             ###   ########.fr       */
+/*   Created: 2024/02/16 17:57:11 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 16:47:32 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlist.h"
+#include "utils.h"
+#include "memory.h"
 
-bool	_ret_always_true(const t_lst *p)
+void	*ft_xcalloc(size_t sizet)
 {
-	(void)p;
-	return (true);
-}
+	void	*pointer;
 
-void	ft_dl_lstclear(t_lst **lst_pp, voidp_2_v *del)
-{
-	if (!lst_pp || !del)
-		return ;
-	if (!*lst_pp)
-		return ;
-	ft_dl_lst_filter(lst_pp, *_ret_always_true, *del);
+	pointer = (void *)ft_calloc(1, sizet);
+	if (!pointer)
+		exit(EXIT_FAILURE);
+	return (pointer);
 }

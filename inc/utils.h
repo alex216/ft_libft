@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dl_lstclear.c                                   :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 15:40:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 16:19:17 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 16:06:29 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 16:07:57 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlist.h"
+#ifndef UTILS_H
+#define UTILS_H
 
-bool	_ret_always_true(const t_lst *p)
-{
-	(void)p;
-	return (true);
-}
+#include "stdlib.h"
 
-void	ft_dl_lstclear(t_lst **lst_pp, voidp_2_v *del)
-{
-	if (!lst_pp || !del)
-		return ;
-	if (!*lst_pp)
-		return ;
-	ft_dl_lst_filter(lst_pp, *_ret_always_true, *del);
-}
+void	ft_free_list(void **list);
+void	*ft_xcalloc(size_t sizet);
+
+#endif

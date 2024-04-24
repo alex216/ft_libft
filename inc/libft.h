@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/22 19:48:49 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 16:52:14 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+
+// mem-group
+#include "memory.h"
+
+#include "dlist.h"
+
+// utils-group
+#include "utils.h"
 
 # define MAX_CHAR 256
 
@@ -35,15 +44,6 @@ int						ft_isalpha(int i);
 int						ft_isascii(int i);
 int						ft_isdigit(int i);
 int						ft_isprint(int i);
-
-// mem-group
-void					ft_bzero(void *s, size_t n);
-void					*ft_calloc(size_t count, size_t size);
-void					*ft_memchr(const void *s, int c, size_t n);
-int						ft_memcmp(const void *s1, const void *s2, size_t n);
-void					*ft_memcpy(void *dest, const void *src, size_t n);
-void					*ft_memmove(void *s1, const void *s2, size_t n);
-void					*ft_memset(void *s, int c, size_t len);
 
 // to-group
 int						ft_tolower(int i);
@@ -78,14 +78,14 @@ void					ft_putnbr_fd(int n, int fd);
 
 // lst-group
 t_list					*ft_lstnew(void *content);
-void					ft_lstadd_front(t_list **lst, t_list *new_node);
-int						ft_lstsize(t_list *lst);
-t_list					*ft_lstlast(t_list *lst);
-void					ft_lstadd_back(t_list **lst, t_list *new_node);
-void					ft_lstdelone(t_list *lst, void (*del)(void *));
-void					ft_lstclear(t_list **lst_ptr, void (*del)(void *));
-void					ft_lstiter(t_list *tlist_ptr, void (*f)(void *));
-t_list					*ft_lstmap(t_list *lst_ptr, void *(*f)(void *),
+void					ft_lstadd_front(t_list **lst_pp, t_list *new_node);
+int						ft_lstsize(t_list *lst_p);
+t_list					*ft_lstlast(t_list *lst_p);
+void					ft_lstadd_back(t_list **lst_pp, t_list *new_node);
+void					ft_lstdelone(t_list *lst_p, void (*del)(void *));
+void					ft_lstclear(t_list **lst_pp, void (*del)(void *));
+void					ft_lstiter(t_list *tlst_p, void (*f)(void *));
+t_list					*ft_lstmap(t_list *lst_p, void *(*f)(void *),
 							void (*del)(void *));
 
 //////////////////////////////////////////
@@ -104,44 +104,5 @@ char	*ft_strjooin(int argc, const char *a, const char *b, ...);
 
 // math-group
 int	ft_min(int argc, int a, int b, ...);
-
-// utils-group
-void	ft_free_list(void **list);
-
-// updated doubly_linked_list after libft
-// defining the generalized structure of doubly linked list,
-// hense set with none-domain specific name.
-
-typedef struct s_lst	t_lst;
-
-# ifndef T_RECORD
-
-typedef struct s_record	t_record;
-
-# endif
-
-typedef struct s_lst
-{
-	t_record			*payload_p;
-	size_t				is_sentinel;
-	t_lst				*next_p;
-	t_lst				*prev_p;
-}						t_lst;
-
-// dl version of libft
-bool					ft_dl_lstadd_front_with_lst(t_lst **lst,
-							t_lst *new_node);
-bool					ft_dl_lstadd_back_with_lst(t_lst **lst,
-							t_lst *new_node);
-
-size_t					ft_dl_lstsize(const t_lst *lst);
-t_lst					*ft_dl_lstlast(const t_lst *lst);
-void					ft_dl_lstdelone(t_lst *lst, void (*del)(void *));
-void					ft_dl_lstclear(t_lst **lst_pp, void (*del)(void *));
-void					ft_dl_pf_lst(const t_lst *lst_p,
-							char *(*return_printable)(const t_lst *));
-
-// replace mallloc
-void					*ft_xcalloc(size_t sizet);
 
 #endif

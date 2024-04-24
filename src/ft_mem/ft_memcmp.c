@@ -6,11 +6,12 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:46:09 by yliu              #+#    #+#             */
-/*   Updated: 2024/01/21 16:13:34 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 17:16:01 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
+#include <errno.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

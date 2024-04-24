@@ -6,11 +6,12 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:04:09 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/21 18:46:39 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 16:05:44 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "dlist.h"
+#include "utils.h"
 
 static t_lst	*_ft_dl_lstcreate_a_node(t_record *record_p, size_t is_sentinel)
 {

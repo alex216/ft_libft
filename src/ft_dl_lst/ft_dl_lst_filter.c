@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_xcalloc.c                                       :+:      :+:    :+:   */
+/*   ft_dl_lst_filter.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/16 17:57:11 by yliu              #+#    #+#             */
-/*   Updated: 2024/02/17 16:43:47 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 14:11:16 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 16:21:13 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "dlist.h"
 
-void	*ft_xcalloc(size_t sizet)
+void	ft_dl_lst_filter(t_lst **lst_pp, node_2_bool filer_func, voidp_2_v del)
 {
-	void	*pointer;
+	t_lst	*lst_p;
 
-	pointer = (void *)ft_calloc(1, sizet);
-	if (!pointer)
-		exit(EXIT_FAILURE);
-	return (pointer);
+	if (!lst_pp || !filer_func)
+		return ;
+	if (!*lst_pp)
+		return ;
+	lst_p = *lst_pp;
+	while (lst_p && !lst_p->is_sentinel)
+	{
+		if (!filer_func(lst_p))
+		{
+			lst_p = lst_p->next_p;
+			ft_dl_lstdelone(&lst_p->prev_p, del);
+		}
+		else
+			lst_p = lst_p->next_p;
+	}
 }
