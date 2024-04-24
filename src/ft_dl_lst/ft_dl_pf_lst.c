@@ -14,7 +14,7 @@
 #include "ft_printf.h"
 
 static void	_print_ascending_direction(const t_lst *lst_p,
-	char *(*return_printable)(const t_lst *))
+		char *(*return_printable)(const t_lst *))
 {
 	t_lst	*lst_last_p;
 
@@ -29,7 +29,7 @@ static void	_print_ascending_direction(const t_lst *lst_p,
 }
 
 void	ft_dl_pf_lst(const t_lst *lst_p,
-	char *(*return_printable)(const t_lst *))
+		char *(*return_printable)(const t_lst *))
 {
 	if (!lst_p || !(*return_printable))
 	{

@@ -6,14 +6,14 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:35:25 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/22 17:43:14 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 20:49:21 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "math.h"
 #include <stdarg.h>
 
-static	int _min(int a, int b)
+static int	_min(int a, int b)
 {
 	if (a < b)
 		return (a);
@@ -23,10 +23,10 @@ static	int _min(int a, int b)
 
 int	ft_min(int argc, int a, int b, ...)
 {
-	int	tmp;
-	int	ans;
-	va_list		ap;
-	int			i;
+	int		tmp;
+	int		ans;
+	va_list	ap;
+	int		i;
 
 	va_start(ap, b);
 	ans = _min(a, b);

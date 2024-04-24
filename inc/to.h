@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   to.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 15:35:21 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:48:28 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 17:24:51 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 17:25:16 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "is2.h"
+#ifndef TO_H
+#define TO_H
 
-bool	ft_isblank(char c)
-{
-	return (c == ' ' || c == '\t');
-}
+int						ft_tolower(int i);
+int						ft_toupper(int i);
+int						ft_atoi(const char *str);
+
+#endif

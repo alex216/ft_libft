@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 22:33:27 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/21 18:40:38 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 20:00:45 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str.h"
 
 // no condition of start + len > s_len
 

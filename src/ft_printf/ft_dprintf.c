@@ -29,8 +29,8 @@ static void	pf_process_int(char c, va_list *ap, struct s_main *t_info, int fd)
 	}
 }
 
-static void	pf_process_unsigned_int(char c, va_list *ap, struct s_main *t_info
-									, int fd)
+static void	pf_process_unsigned_int(char c, va_list *ap, struct s_main *t_info,
+		int fd)
 {
 	unsigned int	un;
 

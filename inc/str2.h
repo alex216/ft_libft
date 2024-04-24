@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   str2.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 15:35:21 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:48:28 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 20:44:26 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 20:45:19 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "is2.h"
+#ifndef STR2_H
+# define STR2_H
 
-bool	ft_isblank(char c)
-{
-	return (c == ' ' || c == '\t');
-}
+# include "str.h"
+
+char	*ft_strjooin(int argc, const char *a, const char *b, ...);
+#endif

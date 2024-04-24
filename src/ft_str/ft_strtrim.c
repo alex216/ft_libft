@@ -6,11 +6,12 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:26:44 by yliu              #+#    #+#             */
-/*   Updated: 2024/01/11 11:54:48 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 19:58:17 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "memory.h"
+#include "str.h"
 
 static void	asign_array_to_set(char const *set, unsigned char *used)
 {

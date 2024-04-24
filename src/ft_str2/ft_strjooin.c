@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:54:56 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/22 17:04:00 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 20:45:06 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "str2.h"
 #include <stdarg.h>
 
 char	*ft_strjooin(int argc, const char *a, const char *b, ...)

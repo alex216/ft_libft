@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef UTILS_H
-#define UTILS_H
+# define UTILS_H
 
-#include "stdlib.h"
+# include "stdlib.h"
 
 void	ft_free_list(void **list);
 void	*ft_xcalloc(size_t sizet);

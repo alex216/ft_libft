@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   is.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 15:35:21 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:48:28 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 17:22:29 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 20:46:46 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "is2.h"
+#ifndef IS_H
+# define IS_H
 
-bool	ft_isblank(char c)
-{
-	return (c == ' ' || c == '\t');
-}
+# include <stdbool.h>
+
+int	ft_isalnum(int i);
+int	ft_isalpha(int i);
+int	ft_isascii(int i);
+int	ft_isdigit(int i);
+int	ft_isprint(int i);
+
+#endif

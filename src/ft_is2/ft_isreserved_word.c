@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:35:36 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/22 15:42:54 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/24 20:48:37 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "is2.h"
 
 bool	ft_isreserved_word(char c)
 {

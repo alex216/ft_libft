@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   is2.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 15:35:21 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:48:28 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 20:46:29 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/24 20:47:03 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "is2.h"
+#ifndef IS2_H
+# define IS2_H
 
-bool	ft_isblank(char c)
-{
-	return (c == ' ' || c == '\t');
-}
+# include <stdbool.h>
+
+bool	ft_isblank(char c);
+bool	ft_isquote(char c);
+bool	ft_iswildcard(char c);
+bool	ft_isreserved_word(char c);
+bool	ft_ismetacharacter(char c);
+bool	ft_isspecial_char(char c);
+
+#endif

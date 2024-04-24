@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
 #include "memory.h"
+#include "utils.h"
 
 void	*ft_xcalloc(size_t sizet)
 {
