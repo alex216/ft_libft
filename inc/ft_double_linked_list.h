@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:53:01 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 15:59:15 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 18:20:32 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ bool	ft_dl_lstadd_front_with_lst(t_lst **lst, t_lst *new_node);
 bool	ft_dl_lstadd_back_with_lst(t_lst **lst, t_lst *new_node);
 
 // command
-void	ft_dl_lst_filter(t_lst **lst_pp, node_2_bool filter, voidp_2_v del);
+void	ft_dl_lstfilter(t_lst **lst_pp, node_2_bool filter, voidp_2_v del);
 
 // query
 size_t	ft_dl_lstsize(const t_lst *lst_p);
+t_lst	*ft_dl_lstfirst(const t_lst *lst_p);
 t_lst	*ft_dl_lstlast(const t_lst *lst_p);
 
 // del

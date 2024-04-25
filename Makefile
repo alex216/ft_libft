@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/25 10:45:28 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/25 18:20:28 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,10 @@ SRCS			=\
 				 ./src/ft_dl_lst/ft_dl_lstcreate_ope.c \
 				 ./src/ft_dl_lst/ft_dl_lstclear.c \
 				 ./src/ft_dl_lst/ft_dl_lstdelone.c \
+				 ./src/ft_dl_lst/ft_dl_lstfirst.c \
 				 ./src/ft_dl_lst/ft_dl_lstlast.c \
 				 ./src/ft_dl_lst/ft_dl_lstsize.c \
-				 ./src/ft_dl_lst/ft_dl_lst_filter.c \
+				 ./src/ft_dl_lst/ft_dl_lstfilter.c \
 				 ./src/ft_dl_lst/ft_dl_pf_lst.c \
 				 \
 				 ./src/ft_gnl/get_next_line.c \

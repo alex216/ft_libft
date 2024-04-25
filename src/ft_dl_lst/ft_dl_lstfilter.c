@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dl_lstclear.c                                   :+:      :+:    :+:   */
+/*   ft_dl_lstfilter.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 15:40:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 18:21:29 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 14:11:16 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/25 18:21:19 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_double_linked_list.h"
 
-bool	_ret_always_true(const t_lst *p)
+void	ft_dl_lstfilter(t_lst **lst_pp, node_2_bool filer_func, voidp_2_v del)
 {
-	(void)p;
-	return (true);
-}
+	t_lst	*lst_p;
 
-void	ft_dl_lstclear(t_lst **lst_pp, voidp_2_v *del)
-{
-	if (!lst_pp || !del)
+	if (!lst_pp || !filer_func)
 		return ;
 	if (!*lst_pp)
 		return ;
-	ft_dl_lstfilter(lst_pp, *_ret_always_true, *del);
+	lst_p = *lst_pp;
+	while (lst_p && !lst_p->is_sentinel)
+	{
+		lst_p = lst_p->next_p;
+		if (!filer_func(lst_p->prev_p))
+			ft_dl_lstdelone(&lst_p->prev_p, del);
+	}
+	if (lst_p)
+		*lst_pp = lst_p->next_p;
+	else
+		*lst_pp = NULL;
 }

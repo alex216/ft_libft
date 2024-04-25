@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dl_lstclear.c                                   :+:      :+:    :+:   */
+/*   ft_dl_lstfirst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 15:40:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 18:21:29 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/25 18:19:15 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/25 18:20:15 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_double_linked_list.h"
 
-bool	_ret_always_true(const t_lst *p)
+t_lst	*ft_dl_lstfirst(const t_lst *lst_p)
 {
-	(void)p;
-	return (true);
-}
-
-void	ft_dl_lstclear(t_lst **lst_pp, voidp_2_v *del)
-{
-	if (!lst_pp || !del)
-		return ;
-	if (!*lst_pp)
-		return ;
-	ft_dl_lstfilter(lst_pp, *_ret_always_true, *del);
+	if (lst_p == NULL)
+		return (NULL);
+	while (!lst_p->is_sentinel)
+		lst_p = lst_p->prev_p;
+	return (lst_p->next_p);
 }

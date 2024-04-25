@@ -83,6 +83,7 @@ TEST(ft_dl_lstsize, size_2)
 	EXPECT_EQ(ft_dl_lstsize(*lst_pp), 1);
 
 	ft_dl_lstadd_back_with_lst(lst_pp, node2);
+	EXPECT_EQ(ft_dl_lstsize((*lst_pp)->next_p), 1);
 	EXPECT_EQ(ft_dl_lstsize(*lst_pp), 2);
 }
 
