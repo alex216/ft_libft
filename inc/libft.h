@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 09:03:48 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 10:17:05 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <unistd.h>
 
 #include "double_linked_list.h"
+#include "linked_list.h"
 #include "is.h"
-#include "list.h"
 #include "memory.h"
 #include "put.h"
 #include "to.h"
@@ -32,6 +32,7 @@
 //////////////////////////////////////////
 // updated libft
 # include "math.h"
+# include "is2.h"
 # include "str2.h"
 
 #endif
