@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_list.h                                      :+:      :+:    :+:   */
+/*   ft_ft_linked_list.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#ifndef FT_LINKED_LIST_H
+#define FT_LINKED_LIST_H
 
 typedef struct s_list
 {

@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.h                                             :+:      :+:    :+:   */
+/*   ft_str2.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:45:53 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:46:13 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 20:44:26 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/25 10:45:07 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATH_H
-# define MATH_H
+#ifndef FT_STR2_H
+#define FT_STR2_H
 
-int	ft_min(int argc, int a, int b, ...);
+#include "ft_str.h"
+
+char	*ft_strjooin(int argc, const char *a, const char *b, ...);
 #endif

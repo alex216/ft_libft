@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/25 10:22:07 by yliu             ###   ########.fr        #
+#    Updated: 2024/04/25 10:45:28 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,14 +110,14 @@ HEADERS			=	./inc/ft_printf.h \
 					./inc/get_next_line.h \
 					./inc/libft.h \
 					\
-					./inc/is.h \
-					./inc/str.h \
-					./inc/libft_utils.h \
-					./inc/put.h \
+					./inc/ft_is.h \
+					./inc/ft_str.h \
+					./inc/ft_utils.h \
+					./inc/ft_put.h \
 					\
-					./inc/str2.h \
-					./inc/is2.h \
-					./inc/math.h
+					./inc/ft_str2.h \
+					./inc/ft_is2.h \
+					./inc/ft_math.h
 
 #make obj dir recursively
 MAKE_OBJDIR		= $(shell mkdir -p $(subst $(SRCS_DIR), $(OBJS_DIR), $(dir $(SRCS))))

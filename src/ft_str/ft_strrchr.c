@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:49:37 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 19:56:05 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 10:45:07 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

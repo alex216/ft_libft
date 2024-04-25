@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   double_linked_list.h                               :+:      :+:    :+:   */
+/*   ft_double_linked_list.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOUBLE_LINKED_LIST_H
-# define DOUBLE_LINKED_LIST_H
+#ifndef FT_DOUBLE_LINKED_LIST_H
+#define FT_DOUBLE_LINKED_LIST_H
 
 # include <stdbool.h>
 # include <stddef.h>
