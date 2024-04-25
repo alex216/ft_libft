@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:47:18 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 18:57:07 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 10:45:07 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
+#include "ft_str.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

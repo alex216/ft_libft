@@ -6,12 +6,12 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 22:44:25 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 17:27:08 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 10:45:07 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "str.h"
+#include "ft_str.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

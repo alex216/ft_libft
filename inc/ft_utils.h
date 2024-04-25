@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put.h                                              :+:      :+:    :+:   */
+/*   ft_utils.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:09:48 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:11:07 by yliu             ###   ########.fr       */
+/*   Created: 2024/04/24 16:06:29 by yliu              #+#    #+#             */
+/*   Updated: 2024/04/25 10:16:05 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUT_H
-# define PUT_H
+#ifndef FT_UTILS_H
+# define FT_UTILS_H
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+# include "stdlib.h"
+
+void	ft_free_list(void **list);
+void	*ft_xcalloc(size_t sizet);
 
 #endif

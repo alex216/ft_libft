@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:35:25 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:49:21 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 10:40:10 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "math.h"
+#include "ft_math.h"
 #include <stdarg.h>
 
 static int	_min(int a, int b)

@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 23:57:30 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 17:15:47 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 10:44:14 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "ft_memory.h"
 #include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
