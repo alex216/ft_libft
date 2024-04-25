@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:26:37 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 16:37:31 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 09:03:48 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlist.h"
+#include "double_linked_list.h"
 #include "stdlib.h"
 
 void	ft_dl_lstdelone(t_lst **lst_pp, voidp_2_v del)

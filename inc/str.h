@@ -6,14 +6,14 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:25:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 20:44:56 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 09:01:46 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_H
 # define STR_H
 
-# include "utils.h"
+# include "libft_utils.h"
 # include <stddef.h>
 # define MAX_CHAR 256
 

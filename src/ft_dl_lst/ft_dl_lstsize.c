@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 16:05:17 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 16:10:29 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 09:03:48 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dlist.h"
+#include "double_linked_list.h"
 
 size_t	ft_dl_lstsize(const t_lst *lst_p)
 {

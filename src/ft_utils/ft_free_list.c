@@ -6,11 +6,11 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:45:55 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 16:08:06 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/25 09:01:46 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "libft_utils.h"
 
 void	ft_free_list(void **list)
 {
