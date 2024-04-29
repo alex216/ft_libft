@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 14:11:16 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 18:21:19 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/28 13:41:31 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_dl_lstfilter(t_lst **lst_pp, node_2_bool filer_func, voidp_2_v del)
 	{
 		lst_p = lst_p->next_p;
 		if (!filer_func(lst_p->prev_p))
-			ft_dl_lstdelone(&lst_p->prev_p, del);
+			ft_dl_lstdelone(lst_p->prev_p, del);
 	}
 	if (lst_p)
 		*lst_pp = lst_p->next_p;

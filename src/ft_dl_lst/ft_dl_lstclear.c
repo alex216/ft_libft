@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:40:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 18:21:29 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/26 15:03:45 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ bool	_ret_always_true(const t_lst *p)
 	return (true);
 }
 
-void	ft_dl_lstclear(t_lst **lst_pp, voidp_2_v *del)
+void	ft_dl_lstclear(t_lst **lst_pp, voidp_2_v del)
 {
 	if (!lst_pp || !del)
 		return ;
 	if (!*lst_pp)
 		return ;
-	ft_dl_lstfilter(lst_pp, *_ret_always_true, *del);
+	ft_dl_lstfilter(lst_pp, _ret_always_true, del);
 }
