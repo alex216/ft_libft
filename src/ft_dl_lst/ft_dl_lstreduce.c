@@ -12,7 +12,8 @@
 
 #include "ft_double_linked_list.h"
 
-void	ft_dl_lstreduce(t_lst **lst_pp, node_2_bool should_concat, voidp_2_v concat)
+void	ft_dl_lstreduce(t_lst **lst_pp, node_2_bool should_concat,
+		voidp_2_v concat)
 {
 	t_lst	*lst_p;
 
@@ -26,5 +27,5 @@ void	ft_dl_lstreduce(t_lst **lst_pp, node_2_bool should_concat, voidp_2_v concat
 		else
 			lst_p = lst_p->next_p;
 	}
-	return;
+	return ;
 }

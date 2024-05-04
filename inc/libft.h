@@ -13,6 +13,13 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_double_linked_list.h"
+# include "ft_is.h"
+# include "ft_linked_list.h"
+# include "ft_memory.h"
+# include "ft_put.h"
+# include "ft_to.h"
+# include "ft_utils.h"
 # include <errno.h>
 # include <limits.h>
 # include <stdbool.h>
@@ -21,18 +28,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-#include "ft_double_linked_list.h"
-#include "ft_linked_list.h"
-#include "ft_is.h"
-#include "ft_memory.h"
-#include "ft_put.h"
-#include "ft_to.h"
-#include "ft_utils.h"
-
 //////////////////////////////////////////
 // updated libft
-#include "ft_math.h"
-#include "ft_is2.h"
-#include "ft_str2.h"
+# include "ft_is2.h"
+# include "ft_math.h"
+# include "ft_str2.h"
 
 #endif
