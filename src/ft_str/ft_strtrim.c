@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 11:26:44 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/06 14:35:23 by yliu             ###   ########.fr       */
+/*   Updated: 2024/05/06 15:15:28 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	asign_array_to_set(set, used);
 	start = _res_start(s1, used);
 	end = _res_end(s1, used);
+	free(used);
 	return (ft_substr(s1, start, end - start + 1));
 }
