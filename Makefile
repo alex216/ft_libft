@@ -6,13 +6,14 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/25 18:20:28 by yliu             ###   ########.fr        #
+#    Updated: 2024/05/06 14:21:19 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #compiler option and etc
 NAME			= libft.a
 CFLAGS			= -Wall -Wextra -Werror
+MMD_MP			:= -MMD -MP
 RM				= rm -rf
 ECHO			= printf
 
@@ -23,6 +24,7 @@ INCLUDE			= ./inc/
 
 #files
 # SRCS 			= $(wildcard $(SRCS_DIR)ft_*/*.c)
+DEP				:= $(subst $(SRCS_DIR), $(OBJS_DIR), $(SRCS:.c=.d))
 
 SRCS			=\
 				 ./src/ft_dl_lst/ft_dl_lstcreate_ope.c \
@@ -32,6 +34,8 @@ SRCS			=\
 				 ./src/ft_dl_lst/ft_dl_lstlast.c \
 				 ./src/ft_dl_lst/ft_dl_lstsize.c \
 				 ./src/ft_dl_lst/ft_dl_lstfilter.c \
+				 ./src/ft_dl_lst/ft_dl_lstmap.c \
+				 ./src/ft_dl_lst/ft_dl_lstreduce.c \
 				 ./src/ft_dl_lst/ft_dl_pf_lst.c \
 				 \
 				 ./src/ft_gnl/get_next_line.c \
@@ -99,6 +103,7 @@ SRCS			=\
 				 ./src/ft_to/ft_toupper.c \
 				 \
 				 ./src/ft_str2/ft_strjooin.c \
+				 ./src/ft_str2/ft_strcmp.c \
 				 \
 				 ./src/ft_math/ft_min.c \
 				 \
@@ -120,9 +125,6 @@ HEADERS			=	./inc/ft_printf.h \
 					./inc/ft_is2.h \
 					./inc/ft_math.h
 
-#make obj dir recursively
-MAKE_OBJDIR		= $(shell mkdir -p $(subst $(SRCS_DIR), $(OBJS_DIR), $(dir $(SRCS))))
-
 #color and line
 DEF_COLOR		:=	\033[0;39m
 ORANGE			:=	\033[0;33m
@@ -134,52 +136,78 @@ BLUE			:=	\033[0;94m
 MAGENTA			:=	\033[0;95m
 CYAN			:=	\033[0;96m
 WHITE			:=	\033[0;97m
--				:=	━
-FILE_NUM		= $(words $(SRCS))
-LINE			= $(shell yes $- | head -n $(FILE_NUM) | tr -d '\n'; echo)
 
+-				:= ━
+FILE_NUM		= $(words $(SRCS))
+LINE			= $(shell yes $- | head -n $(BAR_LEN) | tr -d '\n'; echo)
+DIFF_LINE		= $(shell yes $- | head -n $(DIFF) | tr -d '\n'; echo)
+BAR_LEN			= 42
+
+.PHONY:			all
 all:			$(NAME)
 
 $(NAME):		status_check
 
+.PHONY:			status_check
 status_check:
 				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(WHITE)checking...$(DEF_COLOR)\n"
 				@$(ECHO) "\e$(GRAY)$(LINE)\r$(DEF_COLOR)"
 				@make -s compile
 
+.PHONY:			compile
 compile:		$(OBJS)
 				@$(AR) crs $(NAME) $?
 				@$(ECHO) "\r\e$(GREEN)$(LINE)$(DEF_COLOR)"
 				@$(ECHO) "$(GREEN) ‣ 100%% $(DEF_COLOR)\n"
 				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)compiled ✓$(DEF_COLOR)\n"
 
-$(OBJS_DIR)%.o:	$(MAKE_OBJDIR) $(DROW_GRA) $(SRCS_DIR)%.c $(HEADERS)
+ITER			= 0
+DIFF			= 0
+PREV			= 0
 
-				@$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
-				@$(ECHO) "$(RED)$-$(DEF_COLOR)"
+$(OBJS_DIR)%.o:	$(SRCS_DIR)%.c
+				@mkdir -p $(@D)
+				@$(CC) $(CFLAGS) $(MMD_MP) -I $(INCLUDE) -c $< -o $@
+				$(eval ITER=$(shell echo $$(($(ITER) + 1))))
+				$(eval NEW=$(shell echo $$(($(ITER) * $(BAR_LEN) / $(FILE_NUM)))))
+				$(eval DIFF=$(shell echo $$(($(NEW) - $(PREV)))))
+				$(eval PREV=$(shell echo $$(($(NEW)))))
+				i=1; \
+				while [ $$i -le $(DIFF) ]; do \
+					$(ECHO) "$(RED)$-$(DEF_COLOR)"; \
+					i=$$((i + 1)); \
+				done
 
+
+-include $(DEP)
 #other cmds
 
+.PHONY:			clean
 clean:
 				@$(RM) $(OBJS_DIR)
 				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\tobject files \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
+.PHONY:			fclean
 fclean:			clean
 				@$(RM) $(NAME)
 				@$(ECHO) "$(DEF_COLOR)$(BLUE)[LIBFT]\t\t$(NAME) \t$(GREEN)deleted ✓$(DEF_COLOR)\n"
 
+.PHONY:			re
 re:				fclean
 				@make -s
 
+.PHONY:			norm
 norm:
 				@norminette $(SRCS) $(HEADERS); norminette -v
 
+.PHONY:			format_norm
 format_norm:
 				@c_formatter_42 $(SRCS) $(HEADERS)
 
+.PHONY:			debug
 debug:			$(CFLAGS) += -g -fsanitize=address -fsanitize=leaks\
 				fsanitize=integer
 
-.PHONY:			all clean fclean re bonus norm format_norm debug
+.PHONY:			bonus 
 
 include Makefile_tester.mk

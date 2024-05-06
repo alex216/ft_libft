@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 16:05:17 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 10:39:53 by yliu             ###   ########.fr       */
+/*   Updated: 2024/04/26 14:57:56 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 size_t	ft_dl_lstsize(const t_lst *lst_p)
 {
+	size_t	size;
+
 	if (lst_p == NULL)
 		return (0);
-	return (lst_p->prev_p->is_sentinel);
+	if (lst_p->prev_p->is_sentinel)
+		return (lst_p->prev_p->is_sentinel);
+	size = 0;
+	while (!lst_p->is_sentinel)
+	{
+		size++;
+		lst_p = lst_p->next_p;
+	}
+	return (size);
 }
