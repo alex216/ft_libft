@@ -6,13 +6,14 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 14:11:16 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/28 13:41:31 by yliu             ###   ########.fr       */
+/*   Updated: 2024/05/06 21:31:15 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_double_linked_list.h"
 
-void	ft_dl_lstfilter(t_lst **lst_pp, node_2_bool filer_func, voidp_2_v del)
+void	ft_dl_lstfilter(t_lst **lst_pp, t_node_2_bool filer_func,
+		t_voidp_2_v del)
 {
 	t_lst	*lst_p;
 

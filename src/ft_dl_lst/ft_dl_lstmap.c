@@ -6,13 +6,13 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 16:27:52 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/28 17:49:24 by yliu             ###   ########.fr       */
+/*   Updated: 2024/05/06 21:21:03 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_double_linked_list.h"
 
-void	ft_dl_lstmap(t_lst **lst_pp, voidp_2_v convert_func)
+void	ft_dl_lstmap(t_lst **lst_pp, t_voidp_2_v convert_func)
 {
 	t_lst	*lst_p;
 

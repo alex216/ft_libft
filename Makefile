@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/05/06 14:21:19 by yliu             ###   ########.fr        #
+#    Updated: 2024/05/06 21:34:55 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -198,11 +198,15 @@ re:				fclean
 
 .PHONY:			norm
 norm:
-				@norminette $(SRCS) $(HEADERS); norminette -v
+				@norminette $(SRCS)
+				@norminette $(HEADERS)
+				@norminette -v
 
 .PHONY:			format_norm
 format_norm:
-				@c_formatter_42 $(SRCS) $(HEADERS)
+				@c_formatter_42 $(SRCS)
+				@c_formatter_42 $(HEADERS)
+				@make norm
 
 .PHONY:			debug
 debug:			$(CFLAGS) += -g -fsanitize=address -fsanitize=leaks\
