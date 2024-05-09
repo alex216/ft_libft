@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_xclose.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:45:53 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/04 23:18:56 by yliu             ###   ########.fr       */
+/*   Created: 2024/05/07 12:17:12 by yliu              #+#    #+#             */
+/*   Updated: 2024/05/07 12:17:14 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
 
-int	ft_min(int argc, int a, int b, ...);
-#endif
+#include "ft_xwrapper.h"
+
+void	ft_xclose(int fd)
+{
+	if (close(fd) == FAIL)
+		exit(ft_print_error(strerror(errno)));
+}

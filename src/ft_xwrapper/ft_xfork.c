@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_xfork.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:45:53 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/04 23:18:56 by yliu             ###   ########.fr       */
+/*   Created: 2024/05/07 12:16:57 by yliu              #+#    #+#             */
+/*   Updated: 2024/05/07 12:17:04 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
 
-int	ft_min(int argc, int a, int b, ...);
-#endif
+#include "ft_xwrapper.h"
+
+pid_t	ft_xfork(void)
+{
+	pid_t	pid;
+
+	pid = fork();
+	if (pid == FAIL)
+		exit(ft_print_error(strerror(errno)));
+	return (pid);
+}

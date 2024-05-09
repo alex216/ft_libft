@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memory.h                                           :+:      :+:    :+:   */
+/*   ft_memory.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:45:34 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/24 17:15:57 by yliu             ###   ########.fr       */
+/*   Updated: 2024/05/06 21:10:31 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEMORY_H
-#define FT_MEMORY_H
+# define FT_MEMORY_H
 
-#include <stddef.h>
+# include <stddef.h>
+# include <stdint.h>
 
 void					ft_bzero(void *s, size_t n);
 void					*ft_calloc(size_t count, size_t size);

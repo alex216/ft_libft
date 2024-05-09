@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_print_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:45:53 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/04 23:18:56 by yliu             ###   ########.fr       */
+/*   Created: 2024/05/07 10:32:20 by yliu              #+#    #+#             */
+/*   Updated: 2024/05/07 11:48:23 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
+#include "ft_utils.h"
 
-int	ft_min(int argc, int a, int b, ...);
-#endif
+int	ft_print_error(const char *strerror)
+{
+	ft_dprintf(STDERR_FILENO, "%s:%d:%s\n", __FUNCTION__, __LINE__, strerror);
+	return (ALL_ERROR);
+}

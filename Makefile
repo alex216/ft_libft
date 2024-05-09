@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/04/29 14:48:36 by yliu             ###   ########.fr        #
+#    Updated: 2024/05/08 18:43:56 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,12 +103,19 @@ SRCS			=\
 				 ./src/ft_to/ft_toupper.c \
 				 \
 				 ./src/ft_str2/ft_strjooin.c \
+				 ./src/ft_str2/ft_strcmp.c \
 				 \
 				 ./src/ft_math/ft_min.c \
 				 \
 				 ./src/ft_utils/ft_xcalloc.c \
 				 ./src/ft_utils/ft_free_list.c \
+				 ./src/ft_utils/ft_print_error.c \
 				 \
+				 ./src/ft_xwrapper/ft_xfork.c \
+				 ./src/ft_xwrapper/ft_xclose.c \
+				 ./src/ft_xwrapper/ft_xpipe.c \
+				 ./src/ft_xwrapper/ft_xdup2.c \
+				 ./src/ft_xwrapper/ft_xaccess_is.c \
 
 OBJS			= $(subst $(SRCS_DIR), $(OBJS_DIR), $(SRCS:.c=.o))
 HEADERS			=	./inc/ft_printf.h \
@@ -122,7 +129,8 @@ HEADERS			=	./inc/ft_printf.h \
 					\
 					./inc/ft_str2.h \
 					./inc/ft_is2.h \
-					./inc/ft_math.h
+					./inc/ft_math.h \
+					./inc/ft_xwrapper.h
 
 #color and line
 DEF_COLOR		:=	\033[0;39m
@@ -197,11 +205,15 @@ re:				fclean
 
 .PHONY:			norm
 norm:
-				@norminette $(SRCS) $(HEADERS); norminette -v
+				@norminette $(SRCS)
+				@norminette $(HEADERS)
+				@norminette -v
 
 .PHONY:			format_norm
 format_norm:
-				@c_formatter_42 $(SRCS) $(HEADERS)
+				@c_formatter_42 $(SRCS)
+				@c_formatter_42 $(HEADERS)
+				@make norm
 
 .PHONY:			debug
 debug:			$(CFLAGS) += -g -fsanitize=address -fsanitize=leaks\

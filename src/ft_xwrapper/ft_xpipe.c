@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_xpipe.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:45:53 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/04 23:18:56 by yliu             ###   ########.fr       */
+/*   Created: 2024/05/07 12:16:50 by yliu              #+#    #+#             */
+/*   Updated: 2024/05/07 12:16:55 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
+#include "ft_xwrapper.h"
 
-int	ft_min(int argc, int a, int b, ...);
-#endif
+void	ft_xpipe(int *pipefd)
+{
+	if (pipe(pipefd) == -1)
+		exit(ft_print_error(strerror(errno)));
+}
