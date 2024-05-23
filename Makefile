@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/05/23 21:43:13 by yliu             ###   ########.fr        #
+#    Updated: 2024/05/23 22:37:34 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,9 +104,11 @@ SRCS			=\
 				 \
 				 ./src/ft_str2/ft_strjooin.c \
 				 ./src/ft_str2/ft_strcmp.c \
+				 ./src/ft_str2/ft_hexstr_2_decimal.c \
 				 \
 				 ./src/ft_math/ft_min.c \
 				 ./src/ft_math/ft_max.c \
+				 ./src/ft_math/ft_pow.c \
 				 \
 				 ./src/ft_xwrapper/ft_print_error.c \
 				 ./src/ft_xwrapper/ft_xaccess_is_f_ok.c \
