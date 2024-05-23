@@ -12,7 +12,7 @@
 
 #include "ft_str2.h"
 
-static int ft_hex_2_decimal(char hex)
+static int	ft_hex_2_decimal(char hex)
 {
 	if (hex >= '0' && hex <= '9')
 		return (hex - '0');
@@ -23,14 +23,15 @@ static int ft_hex_2_decimal(char hex)
 	return (0);
 }
 
-int ft_hexstr_2_decimal(const char *hexstr)
+int	ft_hexstr_2_decimal(const char *hexstr)
 {
 	int	ans;
-	int len;
+	int	len;
 
 	len = ft_strlen(hexstr);
 	if (!hexstr || !*hexstr)
 		return (0);
-	ans = ft_hex_2_decimal((*hexstr)) * ft_pow(16, len - 1) + ft_hexstr_2_decimal(hexstr + 1);
+	ans = ft_hex_2_decimal((*hexstr)) * ft_pow(16, len - 1)
+		+ ft_hexstr_2_decimal(hexstr + 1);
 	return (ans);
 }

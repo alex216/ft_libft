@@ -15,5 +15,5 @@
 
 int	ft_min(int argc, int a, int b, ...);
 int	ft_max(int argc, int a, int b, ...);
-int ft_pow(int base, int exp);
+int	ft_pow(int base, int exp);
 #endif
