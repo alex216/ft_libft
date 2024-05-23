@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/05/06 21:34:55 by yliu             ###   ########.fr        #
+#    Updated: 2024/05/23 21:36:05 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,6 +106,7 @@ SRCS			=\
 				 ./src/ft_str2/ft_strcmp.c \
 				 \
 				 ./src/ft_math/ft_min.c \
+				 ./src/ft_math/ft_max.c \
 				 \
 				 ./src/ft_utils/ft_xcalloc.c \
 				 ./src/ft_utils/ft_free_list.c \
