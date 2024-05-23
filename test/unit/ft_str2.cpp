@@ -15,3 +15,9 @@ TEST(ft_strjooin, checking_2_or_3_arg)
 	char	*ans3 = ft_strjooin(3, "hello", " world", "!");
 	EXPECT_STREQ(ans3, "hello world!");
 }
+
+TEST(ft_print_error, normal)
+{
+	int	ans = ft_print_error("error");
+	EXPECT_EQ(ans, 1);
+}
