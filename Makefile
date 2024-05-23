@@ -6,7 +6,7 @@
 #    By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/31 18:12:04 by yliu              #+#    #+#              #
-#    Updated: 2024/05/23 21:36:05 by yliu             ###   ########.fr        #
+#    Updated: 2024/05/23 21:43:13 by yliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,8 @@ SRCS			=\
 				 ./src/ft_math/ft_min.c \
 				 ./src/ft_math/ft_max.c \
 				 \
+				 ./src/ft_xwrapper/ft_print_error.c \
+				 ./src/ft_xwrapper/ft_xaccess_is_f_ok.c \
 				 ./src/ft_utils/ft_xcalloc.c \
 				 ./src/ft_utils/ft_free_list.c \
 				 \
@@ -124,7 +126,8 @@ HEADERS			=	./inc/ft_printf.h \
 					\
 					./inc/ft_str2.h \
 					./inc/ft_is2.h \
-					./inc/ft_math.h
+					./inc/ft_math.h \
+					./inc/ft_xwrapper.h
 
 #color and line
 DEF_COLOR		:=	\033[0;39m
