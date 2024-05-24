@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 21:42:09 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/23 22:51:44 by yliu             ###   ########.fr       */
+/*   Updated: 2024/05/24 23:12:30 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_print_error(const char *err)
 {
-	ft_dprintf(STDERR_FILENO, "%s %d %s\n", __FILE__, __LINE__, err);
+	ft_dprintf(STDERR_FILENO, "%s\n", err);
 	return (1);
 }
