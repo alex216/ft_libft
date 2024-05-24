@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str2.h                                          :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 20:44:26 by yliu              #+#    #+#             */
-/*   Updated: 2024/05/23 22:41:41 by yliu             ###   ########.fr       */
+/*   Created: 2024/05/23 21:35:20 by yliu              #+#    #+#             */
+/*   Updated: 2024/05/23 21:35:53 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STR2_H
-# define FT_STR2_H
+#include "ft_math.h"
+#include <stdarg.h>
 
-# include "ft_math.h"
-# include "ft_str.h"
-# include <errno.h>
+static int	_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
 
-char	*ft_strjooin(int argc, const char *a, const char *b, ...);
-int		ft_strcmp(const char *a, const char *b);
-int		ft_hexstr_2_decimal(const char *hexstr);
-#endif
+int	ft_max(int argc, int a, int b, ...)
+{
+	int		tmp;
+	int		ans;
+	va_list	ap;
+	int		i;
+
+	va_start(ap, b);
+	ans = _max(a, b);
+	i = 2;
+	while (i < argc)
+	{
+		tmp = va_arg(ap, int);
+		ans = _max(ans, tmp);
+		i++;
+	}
+	va_end(ap);
+	return (ans);
+}

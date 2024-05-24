@@ -6,7 +6,7 @@
 /*   By: yliu <yliu@student.42.jp>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 22:04:03 by yliu              #+#    #+#             */
-/*   Updated: 2024/04/25 10:47:34 by yliu             ###   ########.fr       */
+/*   Updated: 2024/05/23 21:51:38 by yliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@
 # include "ft_is2.h"
 # include "ft_math.h"
 # include "ft_str2.h"
+# include "ft_xwrapper.h"
 
 #endif
